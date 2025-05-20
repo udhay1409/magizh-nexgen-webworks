@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Vijaya Lakshmi's new photo
+  // Updated team members data with Saravanan's new photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -79,7 +79,7 @@ const AboutPage = () => {
     {
       name: "Saravanan",
       role: "Business Development Manager",
-      image: "/lovable-uploads/02fad416-c810-4af5-ad75-9feee98d91ba.png",
+      image: "/lovable-uploads/cc501c88-63bf-4a11-aae4-f8d6cbd1eda9.png",
       fallback: "S"
     },
     {
