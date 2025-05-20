@@ -193,8 +193,8 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-magizh-teal shrink-0 mt-1" />
                     <div className="ml-4">
                       <h4 className="font-semibold">Email Us</h4>
-                      <p className="text-gray-200">info@magizhnexgen.com</p>
-                      <p className="text-gray-200">support@magizhnexgen.com</p>
+                      <p className="text-gray-200">info@mntfuture.com</p>
+                      <p className="text-gray-200">support@mntfuture.com</p>
                     </div>
                   </div>
                   
@@ -202,8 +202,8 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-magizh-teal shrink-0 mt-1" />
                     <div className="ml-4">
                       <h4 className="font-semibold">Call Us</h4>
-                      <p className="text-gray-200">+91 9876543210</p>
-                      <p className="text-gray-200">+91 8765432109</p>
+                      <p className="text-gray-200">+91 8925845077</p>
+                      <p className="text-gray-200">+91 7402075266</p>
                     </div>
                   </div>
                   
@@ -213,8 +213,8 @@ const Contact = () => {
                       <h4 className="font-semibold">Visit Us</h4>
                       <p className="text-gray-200">
                         Magizh NexGen Technologies,<br />
-                        123 Tech Park, Bypass Road,<br />
-                        Madurai, Tamil Nadu 625007
+                        3/501, Subash Street, Muneeswarar Nagar,<br />
+                        Iyer Bungalow, Madurai, Tamil Nadu, 625014
                       </p>
                     </div>
                   </div>
@@ -280,7 +280,7 @@ const Contact = () => {
           <h3 className="text-2xl font-semibold mb-6 text-center">Find Us</h3>
           <div className="h-96 w-full rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9213411277516!2d78.10813867583015!3d9.938344490147126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5469e8dd10f%3A0x85e898736a1456bc!2sMadurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716318445702!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0550818809835!2d78.13025307583001!3d9.928615890247446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5493d35bc75%3A0x106fd5b909970401!2sIyer%20Bungalow%2C%20Madurai%2C%20Tamil%20Nadu%20625014!5e0!3m2!1sen!2sin!4v1716366704852!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
