@@ -45,7 +45,7 @@ const AboutPage = () => {
     {
       name: "Udhayaseelan Renganathan",
       role: "Founder",
-      image: "/lovable-uploads/b7ee228d-3fa3-4460-a6d5-409f1948cb9e.png",
+      image: "/lovable-uploads/f989be9d-7bb0-4982-93fe-adabd5ab7f72.png",
       description: "With over 15 years of experience in the IT industry, Udhayaseelan founded Magizh NexGen Technologies with a vision to deliver innovative digital solutions that empower businesses across the globe."
     },
     {
