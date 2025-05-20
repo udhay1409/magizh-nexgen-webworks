@@ -25,7 +25,7 @@
 :root {
   --magizh-blue: #2563eb;
   --magizh-purple: #7c3aed;
-  --magizh-teal: #0ecca6; /* Adjusted for better visibility */
+  --magizh-teal: #4936B2; /* Changed from teal to purple to match UI */
   --magizh-pink: #db2777;
   --magizh-dark: #1e293b;
   --magizh-light: #f1f5f9;
@@ -64,5 +64,5 @@
 
 /* Input field focus styles */
 .focus-teal {
-  @apply focus:ring-2 focus:ring-magizh-teal/50 focus:border-magizh-teal;
+  @apply focus:ring-2 focus:ring-magizh-purple/50 focus:border-magizh-purple;
 }

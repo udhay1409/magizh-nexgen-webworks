@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="space-y-6">
             <div className="text-2xl font-bold">
-              Magizh <span className="text-magizh-teal">NexGen</span>
+              Magizh <span className="text-magizh-purple">NexGen</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Custom web and mobile application development for all major industries. 
@@ -37,28 +37,28 @@ const Footer = () => {
               <a 
                 href="#"
                 aria-label="Facebook"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a 
                 href="#"
                 aria-label="Twitter"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a 
                 href="#"
                 aria-label="LinkedIn"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
                 href="#"
                 aria-label="Instagram"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -69,27 +69,27 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 border-b border-white/10 pb-2">Services</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/web-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services/web-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Web Development
                 </Link>
               </li>
               <li>
-                <Link to="/services/mobile-app-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services/mobile-app-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Mobile App Development
                 </Link>
               </li>
               <li>
-                <Link to="/services/ui-ux-design" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services/ui-ux-design" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link to="/services/cloud-infrastructure" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services/cloud-infrastructure" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Cloud Infrastructure
                 </Link>
               </li>
               <li>
-                <Link to="/services/enterprise-solutions" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services/enterprise-solutions" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Enterprise Solutions
                 </Link>
               </li>
@@ -100,27 +100,27 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 border-b border-white/10 pb-2">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/about" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/services" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Our Work
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/industries" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Industries
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/contact" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Contact
                 </Link>
               </li>
               <li>
-                <Link to="/terms" className="text-gray-400 flex items-center gap-2 hover:text-magizh-teal transition-colors">
+                <Link to="/terms" className="text-gray-400 flex items-center gap-2 hover:text-magizh-purple transition-colors">
                   <span className="text-xs">→</span> Terms & Conditions
                 </Link>
               </li>
@@ -142,7 +142,7 @@ const Footer = () => {
               />
               <Button 
                 type="submit"
-                className="bg-magizh-teal hover:bg-magizh-teal/80 text-magizh-dark w-full"
+                className="bg-magizh-purple hover:bg-magizh-purple/80 text-white w-full"
               >
                 Subscribe
               </Button>
@@ -155,10 +155,10 @@ const Footer = () => {
             © {new Date().getFullYear()} Magizh NexGen Technologies. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 md:gap-6 text-sm">
-            <Link to="/terms" className="text-gray-400 hover:text-magizh-teal transition-colors">Terms</Link>
-            <Link to="/privacy" className="text-gray-400 hover:text-magizh-teal transition-colors">Privacy</Link>
-            <Link to="/cookies" className="text-gray-400 hover:text-magizh-teal transition-colors">Cookies</Link>
-            <a href="mailto:info@mntfuture.com" className="text-gray-400 hover:text-magizh-teal transition-colors">Support</a>
+            <Link to="/terms" className="text-gray-400 hover:text-magizh-purple transition-colors">Terms</Link>
+            <Link to="/privacy" className="text-gray-400 hover:text-magizh-purple transition-colors">Privacy</Link>
+            <Link to="/cookies" className="text-gray-400 hover:text-magizh-purple transition-colors">Cookies</Link>
+            <a href="mailto:info@mntfuture.com" className="text-gray-400 hover:text-magizh-purple transition-colors">Support</a>
           </div>
         </div>
       </div>

@@ -75,7 +75,7 @@ const Contact = () => {
     <section id="contact" className="section-padding bg-gradient-to-b from-magizh-blue to-magizh-purple text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-white/10 text-magizh-teal mb-3">Get In Touch</span>
+          <span className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-white/10 text-white mb-3">Get In Touch</span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
             Ready to Start Your Next Project?
           </h2>
@@ -171,7 +171,7 @@ const Contact = () => {
                   
                   <Button
                     type="submit"
-                    className="w-full bg-magizh-teal hover:bg-magizh-teal/80 text-magizh-dark font-medium"
+                    className="w-full bg-magizh-purple hover:bg-magizh-purple/80 text-white font-medium"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -192,8 +192,8 @@ const Contact = () => {
                 
                 <div className="space-y-8">
                   <div className="flex items-start">
-                    <div className="p-3 bg-magizh-teal/20 rounded-full mr-4">
-                      <Mail className="h-6 w-6 text-magizh-teal" />
+                    <div className="p-3 bg-magizh-purple/20 rounded-full mr-4">
+                      <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">Email Us</h4>
@@ -207,8 +207,8 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="p-3 bg-magizh-teal/20 rounded-full mr-4">
-                      <Phone className="h-6 w-6 text-magizh-teal" />
+                    <div className="p-3 bg-magizh-purple/20 rounded-full mr-4">
+                      <Phone className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">Call Us</h4>
@@ -222,8 +222,8 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="p-3 bg-magizh-teal/20 rounded-full mr-4">
-                      <MapPin className="h-6 w-6 text-magizh-teal" />
+                    <div className="p-3 bg-magizh-purple/20 rounded-full mr-4">
+                      <MapPin className="h-6 w-6 text-white" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">Visit Us</h4>
@@ -244,28 +244,28 @@ const Contact = () => {
                     <a 
                       href="#"
                       aria-label="Facebook"
-                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
                     >
                       <Facebook className="h-5 w-5" />
                     </a>
                     <a 
                       href="#"
                       aria-label="Twitter"
-                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
                     >
                       <Twitter className="h-5 w-5" />
                     </a>
                     <a 
                       href="#"
                       aria-label="LinkedIn"
-                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
                     <a 
                       href="#"
                       aria-label="Instagram"
-                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal/80 transition-colors"
+                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
                     >
                       <Instagram className="h-5 w-5" />
                     </a>
