@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Saravanan's new photo
+  // Updated team members data with reordered positions - Salma Begam now after Vijaya Lakshmi
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -77,16 +77,16 @@ const AboutPage = () => {
       fallback: "VL"
     },
     {
-      name: "Saravanan",
-      role: "Business Development Manager",
-      image: "/lovable-uploads/cc501c88-63bf-4a11-aae4-f8d6cbd1eda9.png",
-      fallback: "S"
-    },
-    {
       name: "Salma Begam",
       role: "Project Coordinator",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       fallback: "SB"
+    },
+    {
+      name: "Saravanan",
+      role: "Business Development Manager",
+      image: "/lovable-uploads/cc501c88-63bf-4a11-aae4-f8d6cbd1eda9.png",
+      fallback: "S"
     },
     {
       name: "Gokularajan",
