@@ -19,6 +19,18 @@ const aboutPoints = [
 const About = () => {
   return (
     <section id="about" className="section-padding bg-white">
+      {/* Added heading section similar to the Get In Touch section */}
+      <div className="container mx-auto px-4 mb-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            About <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Us</span>
+          </h2>
+          <p className="text-lg text-gray-600">
+            Learn more about our company, our values, and why clients choose Magizh NexGen Technologies for their digital transformation needs.
+          </p>
+        </div>
+      </div>
+      
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
