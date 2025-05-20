@@ -62,7 +62,7 @@ const AboutPage = () => {
     {
       name: "Abirami Chandresh",
       role: "Director of Sales",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
       description: "With her exceptional interpersonal skills and market knowledge, Abirami spearheads the company's sales initiatives and client acquisition strategies, helping expand our reach across various industries."
     }
   ];
@@ -236,7 +236,7 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Team Members Section - Enhanced UI with Tech Logos */}
+      {/* Team Members Section - Changed from 4 to 3 cards per row */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-2">Our Team</h2>
@@ -244,7 +244,7 @@ const AboutPage = () => {
             Meet the talented professionals who make up our diverse and skilled team, committed to delivering exceptional results for our clients.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div key={index} className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
                 {/* Card Header with Image */}
