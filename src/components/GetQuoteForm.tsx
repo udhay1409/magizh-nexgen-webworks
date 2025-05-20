@@ -164,8 +164,8 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
   };
 
   return (
-    <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+    <Dialog open={open} onOpenChange={handleClose} modal={true}>
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto z-50">
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-10">
             <div className="rounded-full bg-green-100 p-3 mb-4">
@@ -260,7 +260,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="bg-white">
                             <SelectItem value="web_development">Web Development</SelectItem>
                             <SelectItem value="mobile_app">Mobile App Development</SelectItem>
                             <SelectItem value="ui_ux">UI/UX Design</SelectItem>
@@ -287,7 +287,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                               <SelectValue placeholder="Select budget range" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="bg-white">
                             <SelectItem value="less_5k">Less than $5,000</SelectItem>
                             <SelectItem value="5k_10k">$5,000 - $10,000</SelectItem>
                             <SelectItem value="10k_25k">$10,000 - $25,000</SelectItem>
@@ -322,12 +322,12 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
 
                 <div className="bg-blue-50 p-4 rounded-lg mt-6 flex gap-3">
                   <div className="flex-shrink-0">
-                    <Mail className="h-5 w-5 text-magizh-blue" />
+                    <Mail className="h-5 w-5 text-magizh-purple" />
                   </div>
                   <div className="text-sm">
-                    <p className="font-medium text-magizh-blue">Your request will be sent to:</p>
+                    <p className="font-medium text-magizh-purple">Your request will be sent to:</p>
                     <p className="text-gray-600 mt-1">sales@mntfuture.com</p>
-                    <p className="mt-2 font-medium text-magizh-blue">What happens next?</p>
+                    <p className="mt-2 font-medium text-magizh-purple">What happens next?</p>
                     <ol className="list-decimal ml-5 mt-1 text-gray-600 space-y-1">
                       <li>Our sales team will review your requirements</li>
                       <li>We'll contact you within 24 hours</li>
@@ -348,7 +348,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                   </Button>
                   <Button 
                     type="submit" 
-                    className="bg-magizh-blue hover:bg-magizh-blue/80 text-white"
+                    className="bg-magizh-purple hover:bg-magizh-purple/80 text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
