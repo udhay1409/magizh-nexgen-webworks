@@ -49,7 +49,7 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button className="bg-white text-magizh-blue hover:bg-gray-50 text-lg px-8 py-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:translate-y-[-2px] border border-gray-200">
+              <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white text-lg px-8 py-6 rounded-lg shadow-glow-blue transition-all duration-300 ease-in-out hover:translate-y-[-2px]">
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
