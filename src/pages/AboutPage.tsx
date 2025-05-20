@@ -1,5 +1,4 @@
-
-import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
+import { ArrowRight, Award, Building, Calendar, ChevronDown, ChevronUp, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -8,6 +7,8 @@ import Footer from "@/components/Footer";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import TechLogo from "@/components/TechLogo";
+import { useState } from "react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const AboutPage = () => {
   const timeline = [
@@ -196,14 +197,14 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Leadership Section - Modified for reduced size */}
+      {/* Leadership Section - Modified with Read More functionality */}
       <section className="py-12 bg-magizh-light">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-10">Our Leadership</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-6">
             {leadership.map((leader, index) => (
-              <div 
+              <Card 
                 key={index} 
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
@@ -217,27 +218,57 @@ const AboutPage = () => {
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-magizh-dark mb-1">{leader.name}</h3>
                   <p className="text-magizh-blue font-medium text-sm mb-3">{leader.role}</p>
-                  <p className="text-gray-600 text-sm line-clamp-4">
-                    {leader.description}
-                  </p>
-                  <div className="mt-3 pt-3 border-t border-gray-100">
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="sm" className="rounded-full h-7 w-7 p-0">
-                        <div className="sr-only">LinkedIn</div>
-                        <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                      </Button>
-                      <Button variant="outline" size="sm" className="rounded-full h-7 w-7 p-0">
-                        <div className="sr-only">Email</div>
-                        <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </Button>
+                  
+                  <Collapsible>
+                    <div className="text-gray-600 text-sm">
+                      <p className="line-clamp-2">{leader.description}</p>
                     </div>
-                  </div>
+                    
+                    <CollapsibleContent className="pt-2 text-gray-600 text-sm">
+                      <p>{leader.description}</p>
+                      
+                      {/* Additional content that's hidden by default */}
+                      <div className="mt-3">
+                        <h4 className="font-semibold text-magizh-dark mb-1">Expertise</h4>
+                        <ul className="list-disc list-inside">
+                          <li>Strategic Leadership</li>
+                          <li>Business Development</li>
+                          <li>Project Management</li>
+                        </ul>
+                      </div>
+                    </CollapsibleContent>
+                    
+                    <div className="mt-3 pt-3 border-t border-gray-100 flex justify-between items-center">
+                      <div className="flex gap-2">
+                        <Button variant="outline" size="sm" className="rounded-full h-7 w-7 p-0">
+                          <div className="sr-only">LinkedIn</div>
+                          <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                          </svg>
+                        </Button>
+                        <Button variant="outline" size="sm" className="rounded-full h-7 w-7 p-0">
+                          <div className="sr-only">Email</div>
+                          <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </Button>
+                      </div>
+                      <CollapsibleTrigger asChild>
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="text-xs flex items-center gap-1 text-magizh-blue rounded-full hover:bg-magizh-light"
+                        >
+                          <span className="collapsible-closed">Read More</span>
+                          <span className="collapsible-open">Show Less</span>
+                          <ChevronDown className="h-3 w-3 collapsible-closed" />
+                          <ChevronUp className="h-3 w-3 collapsible-open" />
+                        </Button>
+                      </CollapsibleTrigger>
+                    </div>
+                  </Collapsible>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

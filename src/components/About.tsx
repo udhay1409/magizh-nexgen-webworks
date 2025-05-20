@@ -1,8 +1,11 @@
 
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import TechLogo from './TechLogo';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible';
+import { useState } from 'react';
 
 const aboutPoints = [
   "Expert team of developers, designers, and strategists",
@@ -56,12 +59,46 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
               We Build Technology That Powers Business Growth
             </h2>
-            <p className="text-gray-600 mb-6">
-              Magizh NexGen Technologies is a leading provider of custom web and mobile 
-              application development services. With a passion for innovation and a focus 
-              on client success, we deliver high-quality digital solutions that drive 
-              business growth and enhance user experiences.
-            </p>
+            
+            <Collapsible>
+              <div className="text-gray-600">
+                <p className="mb-6 line-clamp-3">
+                  Magizh NexGen Technologies is a leading provider of custom web and mobile 
+                  application development services. With a passion for innovation and a focus 
+                  on client success, we deliver high-quality digital solutions that drive 
+                  business growth and enhance user experiences.
+                </p>
+              </div>
+              
+              <CollapsibleContent className="text-gray-600 mb-6">
+                <p>
+                  Magizh NexGen Technologies is a leading provider of custom web and mobile 
+                  application development services. With a passion for innovation and a focus 
+                  on client success, we deliver high-quality digital solutions that drive 
+                  business growth and enhance user experiences.
+                </p>
+                <p className="mt-3">
+                  Our team brings together years of experience across multiple industries and technologies.
+                  We're committed to understanding your unique business challenges and delivering
+                  tailored solutions that exceed expectations.
+                </p>
+              </CollapsibleContent>
+              
+              <div className="flex justify-end mb-6">
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="text-xs flex items-center gap-1 text-magizh-blue rounded-full hover:bg-magizh-light/50"
+                  >
+                    <span className="collapsible-closed">Read More</span>
+                    <span className="collapsible-open">Show Less</span>
+                    <ChevronDown className="h-3 w-3 collapsible-closed" />
+                    <ChevronUp className="h-3 w-3 collapsible-open" />
+                  </Button>
+                </CollapsibleTrigger>
+              </div>
+            </Collapsible>
             
             <div className="space-y-3 mb-8">
               {aboutPoints.map((point, index) => (

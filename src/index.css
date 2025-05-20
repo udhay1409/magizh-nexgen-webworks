@@ -1,78 +1,48 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-  }
-
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-poppins;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
-  }
-}
-
 @layer components {
   .section-padding {
-    @apply py-20 px-6 md:px-12 lg:px-24;
+    @apply py-16 md:py-24;
   }
   
-  .gradient-text {
-    @apply bg-gradient-to-r from-magizh-blue to-magizh-purple text-transparent bg-clip-text;
+  /* Collapsible functionality */
+  .collapsible-open {
+    @apply hidden;
   }
   
-  .service-card {
-    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300;
+  [data-state='open'] .collapsible-open {
+    @apply block;
   }
   
-  .industry-card {
-    @apply bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:border-magizh-teal transition-colors duration-200;
+  [data-state='open'] .collapsible-closed {
+    @apply hidden;
   }
 }
 
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+:root {
+  --magizh-blue: #2563eb;
+  --magizh-purple: #7c3aed;
+  --magizh-teal: #0d9488;
+  --magizh-pink: #db2777;
+  --magizh-dark: #1e293b;
+  --magizh-light: #f1f5f9;
 }
+
+.text-magizh-blue { color: var(--magizh-blue); }
+.text-magizh-purple { color: var(--magizh-purple); }
+.text-magizh-teal { color: var(--magizh-teal); }
+.text-magizh-pink { color: var(--magizh-pink); }
+.text-magizh-dark { color: var(--magizh-dark); }
+
+.bg-magizh-blue { background-color: var(--magizh-blue); }
+.bg-magizh-purple { background-color: var(--magizh-purple); }
+.bg-magizh-teal { background-color: var(--magizh-teal); }
+.bg-magizh-pink { background-color: var(--magizh-pink); }
+.bg-magizh-dark { background-color: var(--magizh-dark); }
+.bg-magizh-light { background-color: var(--magizh-light); }
+
+.border-magizh-blue { border-color: var(--magizh-blue); }
+.border-magizh-purple { border-color: var(--magizh-purple); }
