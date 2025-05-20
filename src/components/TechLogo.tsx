@@ -1,5 +1,5 @@
 
-import { Code, Github, FileCode, Blocks, LayoutGrid, Database } from "lucide-react";
+import { Code, Github, Gitlab, FileCode, Blocks, LayoutGrid, Database } from "lucide-react";
 
 type TechLogoProps = {
   tech: string;
