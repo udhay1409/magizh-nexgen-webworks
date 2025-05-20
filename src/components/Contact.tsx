@@ -4,40 +4,71 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+
+// Define the form schema using Zod
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().optional(),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    // Reset form
-    setFormData({
+  // Initialize the form with react-hook-form and zod validation
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
       name: '',
       email: '',
       phone: '',
-      message: ''
-    });
+      message: '',
+    },
+  });
+
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Here you would typically send the form data to your backend
+      console.log('Form submitted:', data);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      
+      // Reset form
+      form.reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Something went wrong!",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,76 +90,92 @@ const Contact = () => {
             <div className="bg-white text-gray-800 p-8 rounded-xl shadow-xl">
               <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="John Doe"
-                    required
-                    className="w-full"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="John Doe"
+                            className="w-full"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
+                  
+                  <FormField
+                    control={form.control}
                     name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="john@example.com"
-                    required
-                    className="w-full"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email Address</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="john@example.com"
+                            className="w-full"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Phone Number
-                  </label>
-                  <Input
-                    id="phone"
+                  
+                  <FormField
+                    control={form.control}
                     name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
-                    className="w-full"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone Number</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            className="w-full"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Message
-                  </label>
-                  <Textarea
-                    id="message"
+                  
+                  <FormField
+                    control={form.control}
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your project..."
-                    required
-                    rows={4}
-                    className="w-full"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us about your project..."
+                            rows={4}
+                            className="w-full"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
-                
-                <Button
-                  type="submit"
-                  className="w-full bg-magizh-blue hover:bg-magizh-purple text-white"
-                >
-                  Send Message
-                </Button>
-              </form>
+                  
+                  <Button
+                    type="submit"
+                    className="w-full bg-magizh-blue hover:bg-magizh-purple text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              </Form>
             </div>
           </div>
           
@@ -147,6 +194,7 @@ const Contact = () => {
                     <div className="ml-4">
                       <h4 className="font-semibold">Email Us</h4>
                       <p className="text-gray-200">info@magizhnexgen.com</p>
+                      <p className="text-gray-200">support@magizhnexgen.com</p>
                     </div>
                   </div>
                   
@@ -154,7 +202,8 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-magizh-teal shrink-0 mt-1" />
                     <div className="ml-4">
                       <h4 className="font-semibold">Call Us</h4>
-                      <p className="text-gray-200">+1 (555) 123-4567</p>
+                      <p className="text-gray-200">+91 9876543210</p>
+                      <p className="text-gray-200">+91 8765432109</p>
                     </div>
                   </div>
                   
@@ -163,9 +212,9 @@ const Contact = () => {
                     <div className="ml-4">
                       <h4 className="font-semibold">Visit Us</h4>
                       <p className="text-gray-200">
-                        123 Tech Park,<br />
-                        Silicon Avenue,<br />
-                        Bangalore 560001
+                        Magizh NexGen Technologies,<br />
+                        123 Tech Park, Bypass Road,<br />
+                        Madurai, Tamil Nadu 625007
                       </p>
                     </div>
                   </div>
@@ -175,18 +224,71 @@ const Contact = () => {
               <div className="mt-12">
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
-                  {['facebook', 'twitter', 'linkedin', 'instagram'].map((social) => (
-                    <a 
-                      key={social}
-                      href="#"
-                      className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal transition-colors"
-                    >
-                      <span className="sr-only">{social}</span>
-                    </a>
-                  ))}
+                  <a 
+                    href="#"
+                    aria-label="Facebook"
+                    className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal transition-colors"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="#"
+                    aria-label="Twitter"
+                    className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal transition-colors"
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal transition-colors"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="#"
+                    aria-label="Instagram"
+                    className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-teal transition-colors"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+              
+              <div className="mt-12 bg-white/5 p-6 rounded-lg border border-white/10">
+                <h4 className="font-semibold mb-3">Business Hours</h4>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Monday - Friday:</span>
+                    <span className="text-white">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Saturday:</span>
+                    <span className="text-white">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-300">Sunday:</span>
+                    <span className="text-white">Closed</span>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        <div className="mt-20 bg-white/5 p-8 rounded-xl">
+          <h3 className="text-2xl font-semibold mb-6 text-center">Find Us</h3>
+          <div className="h-96 w-full rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9213411277516!2d78.10813867583015!3d9.938344490147126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5469e8dd10f%3A0x85e898736a1456bc!2sMadurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716318445702!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Magizh NexGen Technologies Location"
+            />
           </div>
         </div>
       </div>

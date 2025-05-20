@@ -68,12 +68,12 @@ const Navbar = () => {
           >
             About
           </Link>
-          <a 
-            href="/#contact" 
-            className="text-gray-700 hover:text-magizh-blue transition-colors"
+          <Link 
+            to="/contact" 
+            className={`transition-colors ${isActive('/contact') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
           >
             Contact
-          </a>
+          </Link>
           <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white transition-colors">
             Get a Quote
           </Button>
@@ -113,13 +113,13 @@ const Navbar = () => {
             >
               About
             </Link>
-            <a 
-              href="/#contact" 
-              className="text-gray-700 hover:text-magizh-blue transition-colors py-2"
+            <Link 
+              to="/contact" 
+              className={`transition-colors py-2 ${isActive('/contact') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
               onClick={() => setIsOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white transition-colors">
               Get a Quote
             </Button>
