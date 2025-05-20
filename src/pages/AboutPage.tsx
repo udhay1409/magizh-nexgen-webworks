@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Kansha's new photo
+  // Updated team members data with Sheik Abdullah's new photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -125,7 +125,7 @@ const AboutPage = () => {
     {
       name: "Sheik Abdullah",
       role: "Senior Software Engineer",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/296e9f90-b911-425f-8ccc-5922f7b0d177.png",
       fallback: "SA",
       techStack: "Next.js, PHP, Laravel"
     }
