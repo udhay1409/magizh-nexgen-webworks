@@ -72,9 +72,28 @@ const Hero = () => {
                   <p className="text-xs text-gray-600 mt-1">5.0 Rating</p>
                 </div>
                 <div className="h-8 flex items-center space-x-4">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="h-8 w-12 bg-gray-200 rounded-md animate-pulse"></div>
-                  ))}
+                  {/* Replace placeholder boxes with actual logos */}
+                  <div className="h-8 w-auto">
+                    <img 
+                      src="/lovable-uploads/19ae1307-2a9b-4961-8493-9f2dff89324b.png" 
+                      alt="Microsoft Logo" 
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div className="h-8 w-auto">
+                    <img 
+                      src="/lovable-uploads/812d4ed3-a0ad-47a9-85ea-2538bc286815.png" 
+                      alt="Google Logo" 
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div className="h-8 w-auto">
+                    <img 
+                      src="/lovable-uploads/a1575d0b-acc4-4816-bb8f-1364a92de3d0.png" 
+                      alt="Amazon Logo" 
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
