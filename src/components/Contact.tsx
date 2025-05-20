@@ -280,7 +280,7 @@ const Contact = () => {
           <h3 className="text-2xl font-semibold mb-6 text-center">Find Us</h3>
           <div className="h-96 w-full rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.0550818809835!2d78.13025307583001!3d9.928615890247446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5493d35bc75%3A0x106fd5b909970401!2sIyer%20Bungalow%2C%20Madurai%2C%20Tamil%20Nadu%20625014!5e0!3m2!1sen!2sin!4v1716366704852!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.980720831892!2d78.12935247409284!3d9.930498589638424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5493c6dad5f%3A0x82b9ac02c9b00c8c!2sMagizh%20NexGen%20Technologies!5e0!3m2!1sen!2sin!4v1716372947844!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
