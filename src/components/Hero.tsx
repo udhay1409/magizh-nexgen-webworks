@@ -75,22 +75,22 @@ const Hero = () => {
                   {/* Client logos */}
                   <div className="h-8 w-auto">
                     <img 
-                      src="/lovable-uploads/b7ee228d-3fa3-4460-a6d5-409f1948cb9e.png" 
-                      alt="Microsoft Logo" 
+                      src="/lovable-uploads/cc5b20ed-c636-4f11-b85f-7cc7ad174791.png" 
+                      alt="Company Logo 1" 
                       className="h-full w-auto object-contain"
                     />
                   </div>
                   <div className="h-8 w-auto">
                     <img 
-                      src="/lovable-uploads/0ee6ec53-58b4-4a8b-892f-eca7c8ea1621.png" 
-                      alt="Google Logo" 
+                      src="/lovable-uploads/7610d573-5744-48bb-90a6-fef817b2bce9.png" 
+                      alt="Company Logo 2" 
                       className="h-full w-auto object-contain"
                     />
                   </div>
                   <div className="h-8 w-auto">
                     <img 
-                      src="/lovable-uploads/1022473e-15e0-410d-894e-c4d217564807.png" 
-                      alt="Amazon Logo" 
+                      src="/lovable-uploads/d9be9d26-2938-4f6b-896e-2aedc187d5a2.png" 
+                      alt="Company Logo 3" 
                       className="h-full w-auto object-contain"
                     />
                   </div>
