@@ -54,6 +54,12 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
+              to="/" 
+              className={`transition-colors ${isActive('/') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
+            >
+              Home
+            </Link>
+            <Link 
               to="/services" 
               className={`transition-colors ${isActive('/services') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
             >
@@ -98,6 +104,13 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-white w-full py-4 shadow-lg">
             <div className="container mx-auto px-4 flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className={`transition-colors py-2 ${isActive('/') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
               <Link 
                 to="/services" 
                 className={`transition-colors py-2 ${isActive('/services') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
