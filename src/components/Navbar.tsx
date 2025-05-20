@@ -30,8 +30,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold text-magizh-blue">
-            Magizh <span className="text-magizh-purple">NexGen</span>
+          <a href="#" className="flex items-center">
+            <img 
+              src="/lovable-uploads/bc719e5a-3c3d-4395-b379-2546328d4f3f.png" 
+              alt="Magizh NexGen Technologies Logo" 
+              className="h-12 md:h-14"
+            />
           </a>
         </div>
         
@@ -41,7 +45,7 @@ const Navbar = () => {
           <a href="#industries" className="text-gray-700 hover:text-magizh-blue transition-colors">Industries</a>
           <a href="#about" className="text-gray-700 hover:text-magizh-blue transition-colors">About</a>
           <a href="#contact" className="text-gray-700 hover:text-magizh-blue transition-colors">Contact</a>
-          <Button className="bg-magizh-blue hover:bg-magizh-purple text-white transition-colors">
+          <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white transition-colors">
             Get a Quote
           </Button>
         </nav>
@@ -87,7 +91,7 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button className="bg-magizh-blue hover:bg-magizh-purple text-white transition-colors">
+            <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white transition-colors">
               Get a Quote
             </Button>
           </div>

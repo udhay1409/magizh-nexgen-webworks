@@ -18,7 +18,7 @@ const Hero = () => {
               Web & Mobile App Development
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="gradient-text">Transform Your Ideas</span> <br />
+              <span className="bg-gradient-to-r from-magizh-blue to-blue-600 text-transparent bg-clip-text">Transform Your Ideas</span> <br />
               Into Digital Reality
             </h1>
             <p className="text-gray-600 text-lg md:text-xl">
@@ -26,7 +26,7 @@ const Hero = () => {
               Serving all major industries with next-generation technology solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-magizh-blue hover:bg-magizh-purple text-white text-lg px-8 py-6 rounded-lg">
+              <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white text-lg px-8 py-6 rounded-lg">
                 Get Started
               </Button>
               <Button variant="outline" className="border-magizh-blue text-magizh-blue hover:bg-magizh-blue/5 text-lg px-8 py-6 rounded-lg">
@@ -48,8 +48,8 @@ const Hero = () => {
           
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md">
-              <div className="absolute -top-4 -right-4 w-72 h-72 bg-magizh-teal/20 rounded-full filter blur-xl animate-float"></div>
-              <div className="absolute -bottom-8 -left-8 w-72 h-72 bg-magizh-pink/20 rounded-full filter blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute -top-4 -right-4 w-72 h-72 bg-magizh-blue/20 rounded-full filter blur-xl animate-float"></div>
+              <div className="absolute -bottom-8 -left-8 w-72 h-72 bg-blue-400/20 rounded-full filter blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
               
               <div className="relative bg-white p-2 rounded-2xl shadow-2xl border border-gray-100 z-10">
                 <div className="aspect-[9/16] bg-gray-100 rounded-xl overflow-hidden">

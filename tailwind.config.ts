@@ -67,12 +67,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 magizh: {
-                    "blue": "#2A4494",
+                    "blue": "#2196F3", // Updated to match the logo's blue color
                     "purple": "#4936B2",
                     "teal": "#25CED1",
                     "pink": "#FF8A8A",
                     "light": "#F8F9FD",
-                    "dark": "#0A1128"
+                    "dark": "#0A1128",
+                    "gray": "#666666" // Added for the gray text in the logo
                 }
 			},
 			borderRadius: {
