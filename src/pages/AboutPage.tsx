@@ -187,7 +187,7 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Leadership Section */}
+      {/* Leadership Section - Updated with wider photo area */}
       <section className="py-16 bg-magizh-light">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Leadership</h2>
@@ -199,14 +199,14 @@ const AboutPage = () => {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex flex-col sm:flex-row">
-                  <div className="sm:w-1/3 h-60 sm:h-auto overflow-hidden bg-gray-100">
+                  <div className="sm:w-2/5 h-60 sm:h-auto overflow-hidden bg-gray-100">
                     <img 
                       src={leader.image} 
                       alt={leader.name} 
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
-                  <div className="sm:w-2/3 p-6">
+                  <div className="sm:w-3/5 p-6">
                     <h3 className="text-xl font-bold text-magizh-dark mb-2">{leader.name}</h3>
                     <p className="text-magizh-blue font-medium mb-4">{leader.role}</p>
                     <p className="text-gray-600">
