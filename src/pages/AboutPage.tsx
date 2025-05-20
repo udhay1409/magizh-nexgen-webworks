@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -57,7 +58,7 @@ const AboutPage = () => {
     {
       name: "Sunmathi Loganathan",
       role: "Director of Administration",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      image: "/lovable-uploads/a1575d0b-acc4-4816-bb8f-1364a92de3d0.png",
       description: "Sunmathi oversees all administrative functions and ensures smooth day-to-day operations. Her organizational skills and attention to detail create an efficient work environment that supports the entire team."
     },
     {
