@@ -1,4 +1,3 @@
-
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members with new photos for Mohammed Asar and Kansha
+  // Updated team members with new photo for Salma Begam
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -80,7 +79,7 @@ const AboutPage = () => {
     {
       name: "Salma Begam",
       role: "Head - Project Development",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      image: "/lovable-uploads/54e1bb51-e1e8-453f-a167-f43abbd55318.png",
       fallback: "SB"
     },
     {
