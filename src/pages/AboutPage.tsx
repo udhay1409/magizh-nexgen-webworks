@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Saravanan's role changed to "Head - Business Development"
+  // Updated team members data with Salma Begam's role changed to "Head - Project Development"
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -78,7 +78,7 @@ const AboutPage = () => {
     },
     {
       name: "Salma Begam",
-      role: "Project Coordinator",
+      role: "Head - Project Development",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       fallback: "SB"
     },
