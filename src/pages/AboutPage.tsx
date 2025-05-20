@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -63,7 +64,7 @@ const AboutPage = () => {
     {
       name: "Abirami Chandresh",
       role: "Director of Sales",
-      image: "/lovable-uploads/1022473e-15e0-410d-894e-c4d217564807.png",
+      image: "/lovable-uploads/2465b8ef-ffa2-4215-9766-b49d41a0665c.png",
       description: "With her exceptional interpersonal skills and market knowledge, Abirami spearheads the company's sales initiatives and client acquisition strategies, helping expand our reach across various industries."
     }
   ];
