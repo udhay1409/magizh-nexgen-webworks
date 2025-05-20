@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with reordered positions - Salma Begam now after Vijaya Lakshmi
+  // Updated team members data with Saravanan's role changed to "Head - Business Development"
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -84,7 +84,7 @@ const AboutPage = () => {
     },
     {
       name: "Saravanan",
-      role: "Business Development Manager",
+      role: "Head - Business Development",
       image: "/lovable-uploads/cc501c88-63bf-4a11-aae4-f8d6cbd1eda9.png",
       fallback: "S"
     },
