@@ -63,17 +63,17 @@ const AboutPage = () => {
     {
       name: "Abirami Chandresh",
       role: "Director of Sales",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       description: "With her exceptional interpersonal skills and market knowledge, Abirami spearheads the company's sales initiatives and client acquisition strategies, helping expand our reach across various industries."
     }
   ];
 
-  // Updated team members data with new Sahul Hameed entry
+  // Updated team members data with Vijaya Lakshmi's new photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
       role: "Administrative Manager",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      image: "/lovable-uploads/a253b229-abe9-43d1-b593-6cf6be8c8b39.png",
       fallback: "VL"
     },
     {
