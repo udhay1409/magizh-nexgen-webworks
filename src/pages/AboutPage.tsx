@@ -1,4 +1,3 @@
-
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Gokularajan's photo
+  // Updated team members data with Dinesh Kannan's photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -119,7 +118,7 @@ const AboutPage = () => {
     {
       name: "Dinesh Kannan",
       role: "Senior Software Engineer",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/8e5a339c-5771-453a-b79b-042d31856f0d.png",
       fallback: "DK",
       techStack: "React, Next.js, Java, Spring Boot"
     },
