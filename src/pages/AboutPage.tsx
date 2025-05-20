@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -68,7 +69,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Salma Begam's role changed to "Head - Project Development"
+  // Updated team members with new photos for Mohammed Asar and Kansha
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -97,7 +98,7 @@ const AboutPage = () => {
     {
       name: "Mohammed Asar",
       role: "Senior Software Engineer",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/ac1c1162-531f-481a-9997-1d3a5f4af32d.png",
       fallback: "MA",
       techStack: "Next.js, Node.js"
     },
@@ -111,7 +112,7 @@ const AboutPage = () => {
     {
       name: "Kansha",
       role: "Senior Software Engineer",
-      image: "/lovable-uploads/0ee6ec53-58b4-4a8b-892f-eca7c8ea1621.png",
+      image: "/lovable-uploads/ebb421f8-0e1e-43ab-9b6d-d4b5edf0dc5f.png",
       fallback: "K",
       techStack: "React.js, Next.js, Node.js, Python"
     },
