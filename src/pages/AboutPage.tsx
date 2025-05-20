@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -34,8 +35,8 @@ const AboutPage = () => {
     { name: "Marketing", icon: <Flag className="text-magizh-blue" /> },
     { name: "Sales", icon: <Star className="text-magizh-purple" /> },
     { name: "Business Analysis", icon: <Award className="text-magizh-teal" /> },
-    { name: "UX & UI Design", icon: <Star className="text-magizh-pink" /> },
-    { name: "Development Teams", icon: <Building className="text-magizh-blue" /> },
+    { name: "UX & UI Design", icon: <LayoutGrid className="text-magizh-pink" /> },
+    { name: "Development Teams", icon: <Code className="text-magizh-blue" /> },
     { name: "Quality Assurance", icon: <Award className="text-magizh-purple" /> },
     { name: "Cloud Operations", icon: <Server className="text-magizh-teal" /> },
     { name: "Customer Support", icon: <Headset className="text-magizh-pink" /> }
@@ -68,7 +69,7 @@ const AboutPage = () => {
     }
   ];
 
-  // New team members data with Sunmathi and Abirami removed
+  // Updated team members data with Gokularajan's photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -91,7 +92,7 @@ const AboutPage = () => {
     {
       name: "Gokularajan",
       role: "Head UX & UI",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/19ae1307-2a9b-4961-8493-9f2dff89324b.png",
       fallback: "G"
     },
     {
