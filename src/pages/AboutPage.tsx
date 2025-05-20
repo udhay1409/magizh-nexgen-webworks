@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Dinesh Kannan's photo
+  // Updated team members data with Gokularajan's new photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -91,7 +91,7 @@ const AboutPage = () => {
     {
       name: "Gokularajan",
       role: "Head UX & UI",
-      image: "/lovable-uploads/19ae1307-2a9b-4961-8493-9f2dff89324b.png",
+      image: "/lovable-uploads/7f5becdb-39fc-4c73-a4c2-844c33c1415e.png",
       fallback: "G"
     },
     {
