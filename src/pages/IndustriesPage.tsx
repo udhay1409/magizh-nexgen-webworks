@@ -6,12 +6,14 @@ import { Briefcase, Users, Globe, Server, Database, Settings, ChevronRight } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Link } from 'react-router-dom';
 
 const industryDetails = [
   {
     icon: <Briefcase className="h-16 w-16 text-magizh-blue" />,
     name: 'Finance & Banking',
     description: 'Secure and efficient solutions for banking, finance, and fintech companies.',
+    id: 'finance-banking',
     benefits: [
       'Advanced security protocols to protect sensitive financial data',
       'Streamlined transaction processing systems',
@@ -25,6 +27,7 @@ const industryDetails = [
     icon: <Users className="h-16 w-16 text-magizh-purple" />,
     name: 'Healthcare',
     description: 'HIPAA-compliant applications and systems for healthcare providers and services.',
+    id: 'healthcare',
     benefits: [
       'Secure patient data management systems',
       'Telemedicine and remote care platforms',
@@ -38,6 +41,7 @@ const industryDetails = [
     icon: <Globe className="h-16 w-16 text-magizh-teal" />,
     name: 'Retail & E-commerce',
     description: 'Engaging shopping experiences and robust management systems.',
+    id: 'retail-ecommerce',
     benefits: [
       'Omnichannel retail solutions',
       'Personalized customer experience platforms',
@@ -51,6 +55,7 @@ const industryDetails = [
     icon: <Server className="h-16 w-16 text-magizh-pink" />,
     name: 'Manufacturing',
     description: 'Streamlined operations and process management solutions.',
+    id: 'manufacturing',
     benefits: [
       'Production line optimization systems',
       'Quality control automation',
@@ -64,6 +69,7 @@ const industryDetails = [
     icon: <Database className="h-16 w-16 text-magizh-blue" />,
     name: 'Education',
     description: 'Learning management systems and educational technology platforms.',
+    id: 'education',
     benefits: [
       'Interactive learning management systems',
       'Student performance analytics',
@@ -77,6 +83,7 @@ const industryDetails = [
     icon: <Settings className="h-16 w-16 text-magizh-purple" />,
     name: 'Logistics',
     description: 'Supply chain optimization and tracking systems for logistics companies.',
+    id: 'logistics',
     benefits: [
       'Real-time fleet management',
       'Route optimization algorithms',
@@ -146,9 +153,11 @@ const IndustriesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80">
-              Request a Consultation <ChevronRight size={16} />
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80">
+                Request a Consultation <ChevronRight size={16} />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -169,9 +178,11 @@ const IndustriesPage = () => {
                       </div>
                       <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
                       <p className="text-gray-600 mb-4">{industry.description}</p>
-                      <Button variant="outline" className="mt-auto">
-                        Learn more
-                      </Button>
+                      <Link to={`/industries/${industry.id}`} className="mt-auto">
+                        <Button variant="outline">
+                          Learn more
+                        </Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -255,6 +266,14 @@ const IndustriesPage = () => {
                   <h4 className="text-lg font-medium mb-2 text-magizh-blue">Success Story</h4>
                   <p className="text-gray-700 text-sm italic">"{industry.casestudy}"</p>
                 </div>
+                
+                <div className="mt-6 text-center">
+                  <Link to={`/industries/${industry.id}`}>
+                    <Button className="bg-magizh-blue hover:bg-magizh-blue/80">
+                      Learn More <ChevronRight size={16} className="ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -280,12 +299,16 @@ const IndustriesPage = () => {
               allows us to address unique challenges in any industry.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80">
-                Schedule a Consultation
-              </Button>
-              <Button size="lg" variant="outline" className="border-magizh-teal text-magizh-teal hover:bg-magizh-teal/10">
-                View All Services
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80">
+                  Schedule a Consultation
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button size="lg" variant="outline" className="border-magizh-teal text-magizh-teal hover:bg-magizh-teal/10">
+                  View All Services
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

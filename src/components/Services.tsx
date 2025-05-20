@@ -1,37 +1,44 @@
 
 import { Code, Smartphone, Globe, Database, Server, Layers } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from 'react-router-dom';
 
 const servicesList = [
   {
     icon: <Code className="h-12 w-12 text-magizh-blue" />,
     title: 'Web Application Development',
-    description: 'Custom web applications with responsive design, intuitive interfaces, and scalable architecture to meet your unique business needs.'
+    description: 'Custom web applications with responsive design, intuitive interfaces, and scalable architecture to meet your unique business needs.',
+    id: 'web-application-development'
   },
   {
     icon: <Smartphone className="h-12 w-12 text-magizh-purple" />,
     title: 'Mobile App Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android that offer seamless performance and engaging user experiences.'
+    description: 'Native and cross-platform mobile applications for iOS and Android that offer seamless performance and engaging user experiences.',
+    id: 'mobile-app-development'
   },
   {
     icon: <Globe className="h-12 w-12 text-magizh-teal" />,
     title: 'UI/UX Design',
-    description: 'User-centered design solutions that enhance usability and create memorable experiences that keep users coming back.'
+    description: 'User-centered design solutions that enhance usability and create memorable experiences that keep users coming back.',
+    id: 'ui-ux-design'
   },
   {
     icon: <Database className="h-12 w-12 text-magizh-pink" />,
     title: 'Database Design & Management',
-    description: 'Efficient database architecture and management systems that ensure data integrity, security, and optimal performance.'
+    description: 'Efficient database architecture and management systems that ensure data integrity, security, and optimal performance.',
+    id: 'database-design-management'
   },
   {
     icon: <Server className="h-12 w-12 text-magizh-blue" />,
     title: 'Cloud Infrastructure',
-    description: 'Scalable cloud solutions and infrastructure management to support your applications with high availability and reliability.'
+    description: 'Scalable cloud solutions and infrastructure management to support your applications with high availability and reliability.',
+    id: 'cloud-infrastructure'
   },
   {
     icon: <Layers className="h-12 w-12 text-magizh-purple" />,
     title: 'Enterprise Solutions',
-    description: 'Comprehensive software solutions for enterprise-level requirements, including ERP, CRM, and custom business applications.'
+    description: 'Comprehensive software solutions for enterprise-level requirements, including ERP, CRM, and custom business applications.',
+    id: 'enterprise-solutions'
   }
 ];
 
@@ -76,8 +83,8 @@ const Services = () => {
               <CardContent className="pt-6">
                 <p className="text-gray-600">{service.description}</p>
                 <div className="mt-6 flex">
-                  <a 
-                    href="#" 
+                  <Link 
+                    to={`/services/${service.id}`}
                     className="inline-flex items-center font-medium text-magizh-blue hover:text-magizh-purple transition-colors group"
                   >
                     Learn more
@@ -90,7 +97,7 @@ const Services = () => {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

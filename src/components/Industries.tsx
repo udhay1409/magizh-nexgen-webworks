@@ -1,37 +1,44 @@
 
 import { Briefcase, Users, Globe, Server, Database, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const industriesList = [
   { 
     icon: <Briefcase className="h-12 w-12 mb-4 text-magizh-blue" />,
     name: 'Finance & Banking',
-    description: 'Secure and efficient solutions for banking, finance, and fintech companies.' 
+    description: 'Secure and efficient solutions for banking, finance, and fintech companies.',
+    id: 'finance-banking'
   },
   { 
     icon: <Users className="h-12 w-12 mb-4 text-magizh-purple" />,
     name: 'Healthcare', 
-    description: 'HIPAA-compliant applications and systems for healthcare providers and services.' 
+    description: 'HIPAA-compliant applications and systems for healthcare providers and services.',
+    id: 'healthcare'
   },
   { 
     icon: <Globe className="h-12 w-12 mb-4 text-magizh-teal" />,
     name: 'Retail & E-commerce', 
-    description: 'Engaging shopping experiences and robust management systems.' 
+    description: 'Engaging shopping experiences and robust management systems.',
+    id: 'retail-ecommerce'
   },
   { 
     icon: <Server className="h-12 w-12 mb-4 text-magizh-pink" />,
     name: 'Manufacturing', 
-    description: 'Streamlined operations and process management solutions.' 
+    description: 'Streamlined operations and process management solutions.',
+    id: 'manufacturing'
   },
   { 
     icon: <Database className="h-12 w-12 mb-4 text-magizh-blue" />,
     name: 'Education', 
-    description: 'Learning management systems and educational technology platforms.' 
+    description: 'Learning management systems and educational technology platforms.',
+    id: 'education'
   },
   { 
     icon: <Settings className="h-12 w-12 mb-4 text-magizh-purple" />,
     name: 'Logistics', 
-    description: 'Supply chain optimization and tracking systems for logistics companies.' 
+    description: 'Supply chain optimization and tracking systems for logistics companies.',
+    id: 'logistics'
   },
 ];
 
@@ -83,13 +90,27 @@ const Industries = () => {
               custom={index}
               className="industry-card bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover"
             >
-              <div className="flex flex-col items-center p-8">
-                <div className="p-4 rounded-full bg-gray-50 mb-4 transition-colors duration-300 group-hover:bg-magizh-blue/5">
-                  {industry.icon}
+              <Link to={`/industries/${industry.id}`} className="block h-full no-underline">
+                <div className="flex flex-col items-center p-8 h-full">
+                  <div className="p-4 rounded-full bg-gray-50 mb-4 transition-colors duration-300 group-hover:bg-magizh-blue/5">
+                    {industry.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
+                  <p className="text-gray-600 mb-4">{industry.description}</p>
+                  <div className="mt-auto inline-flex items-center font-medium text-magizh-blue hover:text-magizh-purple transition-colors group">
+                    Learn more
+                    <svg 
+                      className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
-                <p className="text-gray-600">{industry.description}</p>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -98,8 +119,8 @@ const Industries = () => {
           <p className="text-gray-600 mb-4">
             Don't see your industry? We customize solutions for all business types.
           </p>
-          <a 
-            href="#contact" 
+          <Link 
+            to="/contact" 
             className="inline-flex items-center font-medium text-magizh-teal hover:text-magizh-blue transition-colors group"
           >
             Contact us to learn more
@@ -112,7 +133,7 @@ const Industries = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
