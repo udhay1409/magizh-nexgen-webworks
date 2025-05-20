@@ -1,6 +1,8 @@
 
 import { CheckCircle } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import TechLogo from './TechLogo';
+import { Badge } from './ui/badge';
 
 const aboutPoints = [
   "Expert team of developers, designers, and strategists",
