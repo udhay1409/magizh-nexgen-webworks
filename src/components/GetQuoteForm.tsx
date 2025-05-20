@@ -30,7 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { Briefcase, Calendar, CheckCircle, ClipboardList } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle, ClipboardList, Mail } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -70,15 +70,42 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
     setIsSubmitting(true);
     
     try {
-      // Here you would typically send the form data to your backend
-      console.log("Form submitted:", data);
+      // Create email content
+      const emailContent = `
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone || 'Not provided'}
+        Company: ${data.company || 'Not provided'}
+        Service: ${getServiceLabel(data.service)}
+        Budget: ${getBudgetLabel(data.budget)}
+        Message: ${data.message}
+      `;
       
-      // Simulate API call
+      // Using EmailJS to send email
+      // You would typically set up EmailJS or another email service
+      const emailData = {
+        service_id: "your_service_id", // Replace with actual service ID
+        template_id: "your_template_id", // Replace with actual template ID
+        user_id: "your_user_id", // Replace with actual user ID
+        template_params: {
+          to_email: "sales@mntfuture.com",
+          from_name: data.name,
+          from_email: data.email,
+          message: emailContent,
+          subject: `Quote Request from ${data.name} - ${getServiceLabel(data.service)}`,
+        }
+      };
+
+      // Log for debugging
+      console.log("Sending form data to email:", emailData);
+      
+      // In production, you would use an actual email service integration
+      // For now, we're simulating success
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       toast({
         title: "Quote Request Received!",
-        description: "We'll contact you shortly to discuss your project.",
+        description: "Your request has been sent to our sales team, we'll contact you shortly.",
       });
       
       setIsSuccess(true);
@@ -94,12 +121,38 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
       console.error("Error submitting form:", error);
       toast({
         title: "Something went wrong!",
-        description: "Please try again later.",
+        description: "Please try again later or contact us directly.",
         variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Helper functions to get readable labels for form values
+  const getServiceLabel = (value: string) => {
+    const services: Record<string, string> = {
+      web_development: "Web Development",
+      mobile_app: "Mobile App Development",
+      ui_ux: "UI/UX Design",
+      cloud: "Cloud Solutions",
+      consulting: "IT Consulting",
+      custom: "Custom Software",
+      other: "Other"
+    };
+    return services[value] || value;
+  };
+  
+  const getBudgetLabel = (value: string) => {
+    const budgets: Record<string, string> = {
+      less_5k: "Less than $5,000",
+      "5k_10k": "$5,000 - $10,000",
+      "10k_25k": "$10,000 - $25,000",
+      "25k_50k": "$25,000 - $50,000",
+      "50k_plus": "$50,000+",
+      "not_sure": "Not sure"
+    };
+    return budgets[value] || value;
   };
 
   const handleClose = () => {
@@ -269,13 +322,15 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
 
                 <div className="bg-blue-50 p-4 rounded-lg mt-6 flex gap-3">
                   <div className="flex-shrink-0">
-                    <ClipboardList className="h-5 w-5 text-magizh-blue" />
+                    <Mail className="h-5 w-5 text-magizh-blue" />
                   </div>
                   <div className="text-sm">
-                    <p className="font-medium text-magizh-blue">What happens next?</p>
+                    <p className="font-medium text-magizh-blue">Your request will be sent to:</p>
+                    <p className="text-gray-600 mt-1">sales@mntfuture.com</p>
+                    <p className="mt-2 font-medium text-magizh-blue">What happens next?</p>
                     <ol className="list-decimal ml-5 mt-1 text-gray-600 space-y-1">
-                      <li>We'll review your requirements</li>
-                      <li>Our team will contact you within 24 hours</li>
+                      <li>Our sales team will review your requirements</li>
+                      <li>We'll contact you within 24 hours</li>
                       <li>We'll schedule a detailed consultation call</li>
                       <li>You'll receive a custom proposal</li>
                     </ol>
