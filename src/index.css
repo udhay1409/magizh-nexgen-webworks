@@ -25,7 +25,7 @@
 :root {
   --magizh-blue: #2563eb;
   --magizh-purple: #7c3aed;
-  --magizh-teal: #0d9488;
+  --magizh-teal: #0ecca6; /* Adjusted for better visibility */
   --magizh-pink: #db2777;
   --magizh-dark: #1e293b;
   --magizh-light: #f1f5f9;
@@ -46,3 +46,23 @@
 
 .border-magizh-blue { border-color: var(--magizh-blue); }
 .border-magizh-purple { border-color: var(--magizh-purple); }
+.border-magizh-teal { border-color: var(--magizh-teal); }
+
+/* Add new utility classes for gradients */
+.bg-gradient-blue-purple {
+  background: linear-gradient(135deg, var(--magizh-blue), var(--magizh-purple));
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--magizh-dark), #0f172a);
+}
+
+/* Glass effect utilities */
+.glass-effect {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+/* Input field focus styles */
+.focus-teal {
+  @apply focus:ring-2 focus:ring-magizh-teal/50 focus:border-magizh-teal;
+}

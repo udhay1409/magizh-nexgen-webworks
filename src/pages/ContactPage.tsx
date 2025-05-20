@@ -13,9 +13,11 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-24">
-        <Contact />
-      </div>
+      <main className="flex-grow">
+        <div className="pt-20">
+          <Contact />
+        </div>
+      </main>
       <Footer />
     </div>
   );
