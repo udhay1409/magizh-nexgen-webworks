@@ -144,12 +144,12 @@ const AboutPage = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with updated heading style */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-white to-magizh-light">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-magizh-dark mb-6">
-              Our <span className="text-magizh-blue">Story</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Our <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Story</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8">
               From our humble beginnings to becoming a leading IT services provider
@@ -162,7 +162,9 @@ const AboutPage = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">
+              Our <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Journey</span>
+            </h2>
             
             <div className="relative">
               {/* Timeline line */}
@@ -197,10 +199,12 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Leadership Section - Modified with Read More functionality */}
+      {/* Leadership Section - Modified heading style */}
       <section className="py-12 bg-magizh-light">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Our Leadership</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Our <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Leadership</span>
+          </h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-6">
             {leadership.map((leader, index) => (
@@ -274,10 +278,12 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Team Members Section - Modified for reduced size */}
+      {/* Team Members Section - Modified heading style */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-2">Our Senior Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-2">
+            Our <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Senior Team</span>
+          </h2>
           <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">
             Meet the talented professionals who make up our diverse and skilled team, committed to delivering exceptional results for our clients.
           </p>
@@ -355,10 +361,12 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Our Departments - Modified for reduced size */}
+      {/* Our Departments - Modified heading style */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Our Departments</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Our <span className="bg-gradient-to-r from-magizh-blue via-magizh-purple to-magizh-teal text-transparent bg-clip-text">Departments</span>
+          </h2>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {departments.map((dept, index) => (
@@ -375,13 +383,16 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Call to Action - No major size changes needed */}
+      {/* Call to Action - Modified heading style */}
       <section className="py-12 bg-magizh-blue text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Work With Us?</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            Ready to <span className="text-magizh-light">Work With Us?</span>
+          </h2>
           <p className="text-lg max-w-3xl mx-auto mb-6">
             Let's collaborate to bring your digital vision to life with our experienced team and innovative solutions.
           </p>
+          
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/services">
               <Button variant="secondary" size="lg" className="flex items-center">
