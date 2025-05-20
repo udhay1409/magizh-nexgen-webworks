@@ -2,8 +2,10 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,6 +24,13 @@ const Navbar = () => {
     };
   }, []);
 
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === path;
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -30,21 +39,41 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/bc719e5a-3c3d-4395-b379-2546328d4f3f.png" 
               alt="Magizh NexGen Technologies Logo" 
               className="h-12 md:h-14"
             />
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#services" className="text-gray-700 hover:text-magizh-blue transition-colors">Services</a>
-          <a href="#industries" className="text-gray-700 hover:text-magizh-blue transition-colors">Industries</a>
-          <a href="#about" className="text-gray-700 hover:text-magizh-blue transition-colors">About</a>
-          <a href="#contact" className="text-gray-700 hover:text-magizh-blue transition-colors">Contact</a>
+          <Link 
+            to="/services" 
+            className={`transition-colors ${isActive('/services') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
+          >
+            Services
+          </Link>
+          <a 
+            href="/#industries" 
+            className="text-gray-700 hover:text-magizh-blue transition-colors"
+          >
+            Industries
+          </a>
+          <a 
+            href="/#about" 
+            className="text-gray-700 hover:text-magizh-blue transition-colors"
+          >
+            About
+          </a>
+          <a 
+            href="/#contact" 
+            className="text-gray-700 hover:text-magizh-blue transition-colors"
+          >
+            Contact
+          </a>
           <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white transition-colors">
             Get a Quote
           </Button>
@@ -63,29 +92,29 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white w-full py-4 shadow-lg">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <a 
-              href="#services" 
-              className="text-gray-700 hover:text-magizh-blue transition-colors py-2"
+            <Link 
+              to="/services" 
+              className={`transition-colors py-2 ${isActive('/services') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
               onClick={() => setIsOpen(false)}
             >
               Services
-            </a>
+            </Link>
             <a 
-              href="#industries" 
+              href="/#industries" 
               className="text-gray-700 hover:text-magizh-blue transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               Industries
             </a>
             <a 
-              href="#about" 
+              href="/#about" 
               className="text-gray-700 hover:text-magizh-blue transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               About
             </a>
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="text-gray-700 hover:text-magizh-blue transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
