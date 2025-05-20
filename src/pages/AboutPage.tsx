@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Flag, MapPin, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -48,23 +49,21 @@ const AboutPage = () => {
       name: "Rahavi Udhayaseelan",
       role: "CEO & Managing Director",
       image: "/lovable-uploads/df0f513c-5b55-4033-a587-aca4ed23b5ec.png"
-    }
-  ];
-
-  // New team members data
-  const teamMembers = [
+    },
     {
       name: "Sunmathi Loganathan",
       role: "Director of Administration",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      fallback: "SL"
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
     },
     {
       name: "Abirami Chandresh",
       role: "Director of Sales",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      fallback: "AC"
-    },
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    }
+  ];
+
+  // New team members data with Sunmathi and Abirami removed
+  const teamMembers = [
     {
       name: "Vijaya Lakshmi",
       role: "Administrative Manager",
@@ -325,3 +324,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
