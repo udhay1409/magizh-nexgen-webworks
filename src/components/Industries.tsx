@@ -1,49 +1,72 @@
 
 import { Briefcase, Users, Globe, Server, Database, Settings } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const industriesList = [
   { 
-    icon: <Briefcase className="h-10 w-10 mb-4 text-magizh-blue" />,
+    icon: <Briefcase className="h-12 w-12 mb-4 text-magizh-blue" />,
     name: 'Finance & Banking',
     description: 'Secure and efficient solutions for banking, finance, and fintech companies.' 
   },
   { 
-    icon: <Users className="h-10 w-10 mb-4 text-magizh-purple" />,
+    icon: <Users className="h-12 w-12 mb-4 text-magizh-purple" />,
     name: 'Healthcare', 
     description: 'HIPAA-compliant applications and systems for healthcare providers and services.' 
   },
   { 
-    icon: <Globe className="h-10 w-10 mb-4 text-magizh-teal" />,
+    icon: <Globe className="h-12 w-12 mb-4 text-magizh-teal" />,
     name: 'Retail & E-commerce', 
     description: 'Engaging shopping experiences and robust management systems.' 
   },
   { 
-    icon: <Server className="h-10 w-10 mb-4 text-magizh-pink" />,
+    icon: <Server className="h-12 w-12 mb-4 text-magizh-pink" />,
     name: 'Manufacturing', 
     description: 'Streamlined operations and process management solutions.' 
   },
   { 
-    icon: <Database className="h-10 w-10 mb-4 text-magizh-blue" />,
+    icon: <Database className="h-12 w-12 mb-4 text-magizh-blue" />,
     name: 'Education', 
     description: 'Learning management systems and educational technology platforms.' 
   },
   { 
-    icon: <Settings className="h-10 w-10 mb-4 text-magizh-purple" />,
+    icon: <Settings className="h-12 w-12 mb-4 text-magizh-purple" />,
     name: 'Logistics', 
     description: 'Supply chain optimization and tracking systems for logistics companies.' 
   },
 ];
 
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+      duration: 0.5,
+    },
+  }),
+};
+
 const Industries = () => {
   return (
-    <section id="industries" className="section-padding bg-gray-50">
-      <div className="container mx-auto">
+    <section id="industries" className="section-padding bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-magizh-teal/5 filter blur-3xl"></div>
+      <div className="absolute bottom-20 -left-20 w-60 h-60 rounded-full bg-magizh-purple/5 filter blur-3xl"></div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-magizh-blue uppercase tracking-wider">Industries We Serve</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
-            Transforming Businesses Across Industries
+          <span className="inline-block px-4 py-1.5 bg-magizh-teal/10 text-magizh-teal rounded-full text-sm font-semibold uppercase tracking-wider border border-magizh-teal/20">Industries We Serve</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4 relative">
+            <span className="bg-gradient-to-r from-magizh-teal via-magizh-blue to-magizh-purple text-transparent bg-clip-text">
+              Transforming Businesses Across Industries
+            </span>
+            <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-magizh-teal/30 rounded-full"></div>
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-gray-600 max-w-3xl mx-auto mt-6">
             We work with clients across a wide range of industries, bringing our technical expertise and 
             domain knowledge to provide tailored solutions for each sector.
           </p>
@@ -51,16 +74,23 @@ const Industries = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {industriesList.map((industry, index) => (
-            <div 
+            <motion.div
               key={index}
-              className="industry-card text-center"
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+              className="industry-card bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50 text-center transform transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover"
             >
-              <div className="flex flex-col items-center">
-                {industry.icon}
+              <div className="flex flex-col items-center p-8">
+                <div className="p-4 rounded-full bg-gray-50 mb-4 transition-colors duration-300 group-hover:bg-magizh-blue/5">
+                  {industry.icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
                 <p className="text-gray-600">{industry.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -70,11 +100,11 @@ const Industries = () => {
           </p>
           <a 
             href="#contact" 
-            className="inline-flex items-center font-medium text-magizh-blue hover:text-magizh-purple transition-colors"
+            className="inline-flex items-center font-medium text-magizh-teal hover:text-magizh-blue transition-colors group"
           >
             Contact us to learn more
             <svg 
-              className="ml-2 w-4 h-4" 
+              className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24" 

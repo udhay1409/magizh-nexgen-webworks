@@ -105,14 +105,35 @@ export default {
                 'float': {
                     '0%, 100%': { transform: 'translateY(0)' },
                     '50%': { transform: 'translateY(-10px)' }
+                },
+                'slide-in-right': {
+                    '0%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(0)' }
+                },
+                'rotate-in': {
+                    '0%': { transform: 'rotate(-10deg) scale(0.95)', opacity: '0' },
+                    '100%': { transform: 'rotate(0deg) scale(1)', opacity: '1' }
+                },
+                'pulse-soft': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.8' }
                 }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
                 'fade-in': 'fade-in 0.5s ease-out forwards',
-                'float': 'float 5s ease-in-out infinite'
-			}
+                'float': 'float 5s ease-in-out infinite',
+                'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                'rotate-in': 'rotate-in 0.7s ease-out forwards',
+                'pulse-soft': 'pulse-soft 3s infinite'
+			},
+            boxShadow: {
+                'glow-blue': '0 0 20px rgba(33, 150, 243, 0.4)',
+                'glow-purple': '0 0 20px rgba(73, 54, 178, 0.4)',
+                'card-hover': '0 10px 30px rgba(0, 0, 0, 0.1)',
+                'hero-card': '0 15px 35px rgba(33, 150, 243, 0.2)'
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
