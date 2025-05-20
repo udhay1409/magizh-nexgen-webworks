@@ -68,7 +68,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Manoj Kumar's new photo
+  // Updated team members data with new Sahul Hameed entry
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -114,6 +114,13 @@ const AboutPage = () => {
       image: "/lovable-uploads/0ee6ec53-58b4-4a8b-892f-eca7c8ea1621.png",
       fallback: "K",
       techStack: "React.js, Next.js, Node.js, Python"
+    },
+    {
+      name: "Sahul Hameed",
+      role: "Senior Software Engineer",
+      image: "/lovable-uploads/cef7be2c-2b34-488a-a72c-d20c1a517b68.png",
+      fallback: "SH",
+      techStack: "Next.js, Node.js"
     },
     {
       name: "Dinesh Kannan",
