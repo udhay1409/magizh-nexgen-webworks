@@ -1,3 +1,4 @@
+
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -68,7 +69,7 @@ const AboutPage = () => {
     }
   ];
 
-  // Updated team members data with Gokularajan's new photo
+  // Updated team members data with Saravanan's new photo
   const teamMembers = [
     {
       name: "Vijaya Lakshmi",
@@ -79,7 +80,7 @@ const AboutPage = () => {
     {
       name: "Saravanan",
       role: "Business Development Manager",
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/02fad416-c810-4af5-ad75-9feee98d91ba.png",
       fallback: "S"
     },
     {
