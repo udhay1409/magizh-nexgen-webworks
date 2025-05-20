@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { toast } = useToast();
@@ -83,7 +84,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Magizh NexGen Technologies. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+            <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Cookies</a>
           </div>
