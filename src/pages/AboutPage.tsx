@@ -231,7 +231,7 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Team Members Section */}
+      {/* Team Members Section - Enhanced UI */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-2">Our Team</h2>
@@ -239,37 +239,70 @@ const AboutPage = () => {
             Meet the talented professionals who make up our diverse and skilled team, committed to delivering exceptional results for our clients.
           </p>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-                <div className="aspect-square relative bg-gray-100">
+              <div key={index} className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                {/* Card Header with Image */}
+                <div className="aspect-square relative bg-gradient-to-br from-magizh-light to-white overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
                   <img 
                     src={member.image} 
                     alt={member.name} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
                       (e.currentTarget.nextSibling as HTMLElement).style.display = 'flex';
                     }}
                   />
                   <div 
-                    className="hidden w-full h-full items-center justify-center text-2xl font-bold bg-magizh-light text-magizh-blue"
+                    className="hidden w-full h-full items-center justify-center text-2xl font-bold bg-gradient-to-br from-magizh-blue/20 to-magizh-purple/20 text-magizh-blue"
                   >
                     {member.fallback}
                   </div>
                 </div>
-                <CardContent className="p-4">
-                  <h3 className="font-bold text-lg">{member.name}</h3>
-                  <p className="text-magizh-blue font-medium">{member.role}</p>
+                
+                {/* Card Content */}
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-magizh-dark">{member.name}</h3>
+                  <p className="text-magizh-blue font-medium mb-3">{member.role}</p>
+                  
+                  {/* Tech Stack with Animation */}
                   {member.techStack && (
                     <div className="mt-2">
-                      <p className="text-sm text-gray-600">
-                        <span className="font-medium">Tech Stack:</span> {member.techStack}
-                      </p>
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {member.techStack.split(', ').map((tech, i) => (
+                          <span 
+                            key={i} 
+                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-magizh-light text-magizh-blue"
+                            style={{
+                              animationDelay: `${i * 100}ms`,
+                            }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   )}
-                </CardContent>
-              </Card>
+                  
+                  {/* Social Icons */}
+                  <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+                    <div className="flex gap-2">
+                      <Button variant="ghost" size="sm" className="rounded-full p-0 h-8 w-8 flex items-center justify-center text-gray-500 hover:text-magizh-blue hover:bg-magizh-light/50">
+                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </Button>
+                      <Button variant="ghost" size="sm" className="rounded-full p-0 h-8 w-8 flex items-center justify-center text-gray-500 hover:text-magizh-blue hover:bg-magizh-light/50">
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </Button>
+                    </div>
+                    <div className="text-xs text-gray-500">{member.techStack ? "Developer" : "Management"}</div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -324,4 +357,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-
