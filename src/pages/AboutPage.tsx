@@ -1,4 +1,3 @@
-
 import { ArrowRight, Award, Building, Calendar, Flag, MapPin, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,6 +48,81 @@ const AboutPage = () => {
       name: "Rahavi Udhayaseelan",
       role: "CEO & Managing Director",
       image: "/lovable-uploads/df0f513c-5b55-4033-a587-aca4ed23b5ec.png"
+    }
+  ];
+
+  // New team members data
+  const teamMembers = [
+    {
+      name: "Sunmathi Loganathan",
+      role: "Director of Administration",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      fallback: "SL"
+    },
+    {
+      name: "Abirami Chandresh",
+      role: "Director of Sales",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      fallback: "AC"
+    },
+    {
+      name: "Vijaya Lakshmi",
+      role: "Administrative Manager",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      fallback: "VL"
+    },
+    {
+      name: "Saravanan",
+      role: "Business Development Manager",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "S"
+    },
+    {
+      name: "Salma Begam",
+      role: "Project Coordinator",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      fallback: "SB"
+    },
+    {
+      name: "Gokularajan",
+      role: "Head UX & UI",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "G"
+    },
+    {
+      name: "Mohammed Asar",
+      role: "Senior Software Engineer",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "MA",
+      techStack: "Next.js, Node.js"
+    },
+    {
+      name: "Manoj Kumar",
+      role: "Senior Software Engineer",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "MK",
+      techStack: "Next.js, Node.js"
+    },
+    {
+      name: "Kansha",
+      role: "Senior Software Engineer",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      fallback: "K",
+      techStack: "React.js, Next.js, Node.js, Python"
+    },
+    {
+      name: "Dinesh Kannan",
+      role: "Senior Software Engineer",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "DK",
+      techStack: "React, Next.js, Java, Spring Boot"
+    },
+    {
+      name: "Sheik Abdullah",
+      role: "Senior Software Engineer",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      fallback: "SA",
+      techStack: "Next.js, PHP, Laravel"
     }
   ];
 
@@ -158,8 +232,52 @@ const AboutPage = () => {
         </div>
       </section>
       
-      {/* Our Departments */}
+      {/* Team Members Section */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-2">Our Team</h2>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            Meet the talented professionals who make up our diverse and skilled team, committed to delivering exceptional results for our clients.
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                <div className="aspect-square relative bg-gray-100">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      (e.currentTarget.nextSibling as HTMLElement).style.display = 'flex';
+                    }}
+                  />
+                  <div 
+                    className="hidden w-full h-full items-center justify-center text-2xl font-bold bg-magizh-light text-magizh-blue"
+                  >
+                    {member.fallback}
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <h3 className="font-bold text-lg">{member.name}</h3>
+                  <p className="text-magizh-blue font-medium">{member.role}</p>
+                  {member.techStack && (
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-600">
+                        <span className="font-medium">Tech Stack:</span> {member.techStack}
+                      </p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Our Departments */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Our Departments</h2>
           
