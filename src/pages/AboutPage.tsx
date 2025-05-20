@@ -1,4 +1,3 @@
-
 import { ArrowRight, Award, Building, Calendar, Code, Flag, Headset, LayoutGrid, LifeBuoy, Mail, MessageSquare, Phone, Server, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -38,7 +37,8 @@ const AboutPage = () => {
     { name: "UX & UI Design", icon: <Star className="text-magizh-pink" /> },
     { name: "Development Teams", icon: <Building className="text-magizh-blue" /> },
     { name: "Quality Assurance", icon: <Award className="text-magizh-purple" /> },
-    { name: "Cloud Operations", icon: <MapPin className="text-magizh-teal" /> }
+    { name: "Cloud Operations", icon: <Server className="text-magizh-teal" /> },
+    { name: "Customer Support", icon: <Headset className="text-magizh-pink" /> }
   ];
 
   const leadership = [
