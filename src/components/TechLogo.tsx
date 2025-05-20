@@ -1,5 +1,5 @@
 
-import { Code, Github, Gitlab, React, NodeJs, Python, FileCode, Blocks, LayoutGrid, Database } from "lucide-react";
+import { Code, Github, Gitlab, FileCode, Blocks, LayoutGrid, Database } from "lucide-react";
 
 type TechLogoProps = {
   tech: string;
@@ -11,11 +11,11 @@ const TechLogo = ({ tech, className = "" }: TechLogoProps) => {
   
   // Map technologies to their respective icons
   if (normalizedTech.includes('react')) {
-    return <React className={className} />;
+    return <Code className={className} />;
   } else if (normalizedTech.includes('node')) {
-    return <NodeJs className={className} />;
+    return <Github className={className} />;
   } else if (normalizedTech.includes('python')) {
-    return <Python className={className} />;
+    return <Blocks className={className} />;
   } else if (normalizedTech.includes('next')) {
     return <LayoutGrid className={className} />;
   } else if (normalizedTech.includes('java')) {

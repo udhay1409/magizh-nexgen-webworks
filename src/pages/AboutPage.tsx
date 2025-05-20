@@ -44,22 +44,26 @@ const AboutPage = () => {
     {
       name: "Udhayaseelan Renganathan",
       role: "Founder",
-      image: "/lovable-uploads/b7ee228d-3fa3-4460-a6d5-409f1948cb9e.png"
+      image: "/lovable-uploads/b7ee228d-3fa3-4460-a6d5-409f1948cb9e.png",
+      description: "With over 15 years of experience in the IT industry, Udhayaseelan founded Magizh NexGen Technologies with a vision to deliver innovative digital solutions that empower businesses across the globe."
     },
     {
       name: "Rahavi Udhayaseelan",
       role: "CEO & Managing Director",
-      image: "/lovable-uploads/df0f513c-5b55-4033-a587-aca4ed23b5ec.png"
+      image: "/lovable-uploads/df0f513c-5b55-4033-a587-aca4ed23b5ec.png",
+      description: "As CEO, Rahavi leads the company's strategic direction and business operations. Her expertise in project management and client relations has been instrumental in the company's rapid growth and success."
     },
     {
       name: "Sunmathi Loganathan",
       role: "Director of Administration",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      description: "Sunmathi oversees all administrative functions and ensures smooth day-to-day operations. Her organizational skills and attention to detail create an efficient work environment that supports the entire team."
     },
     {
       name: "Abirami Chandresh",
       role: "Director of Sales",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      description: "With her exceptional interpersonal skills and market knowledge, Abirami spearheads the company's sales initiatives and client acquisition strategies, helping expand our reach across various industries."
     }
   ];
 
@@ -206,7 +210,7 @@ const AboutPage = () => {
                     <h3 className="text-xl font-bold text-magizh-dark mb-2">{leader.name}</h3>
                     <p className="text-magizh-blue font-medium mb-4">{leader.role}</p>
                     <p className="text-gray-600">
-                      Leading Magizh NexGen Technologies with vision and expertise.
+                      {leader.description}
                     </p>
                     <div className="mt-4 pt-4 border-t border-gray-100">
                       <div className="flex gap-2">
