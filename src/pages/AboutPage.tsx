@@ -48,7 +48,7 @@ const AboutPage = () => {
     {
       name: "Rahavi Udhayaseelan",
       role: "CEO & Managing Director",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+      image: "/lovable-uploads/df0f513c-5b55-4033-a587-aca4ed23b5ec.png"
     }
   ];
 
