@@ -6,11 +6,19 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "npm run preview -- --host 0.0.0.0 --port 8080"]
-build = ["sh", "-c", "bun install --save-text-lockfile"]
+build = ["sh", "-c", "rm -f bun.lockb && bun install && npm run build"]
 
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[[ports]]
+localPort = 8081
+externalPort = 8081
+
+[[ports]]
+localPort = 8082
+externalPort = 3000
 
 [workflows]
 runButton = "Run"
