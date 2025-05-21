@@ -18,7 +18,8 @@ const servicesList = [
       'Scalable architecture for future growth',
       'Integration with existing systems and APIs'
     ],
-    technologies: ['React', 'Angular', 'Vue', 'Node.js', 'Django', 'Ruby on Rails']
+    technologies: ['React', 'Angular', 'Vue', 'Node.js', 'Django', 'Ruby on Rails'],
+    id: 'web-application-development'
   },
   {
     icon: <Smartphone className="h-16 w-16 text-magizh-purple" />,
@@ -30,7 +31,8 @@ const servicesList = [
       'Offline functionality for users on the go',
       'Push notifications for improved engagement'
     ],
-    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin']
+    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin'],
+    id: 'mobile-app-development'
   },
   {
     icon: <Globe className="h-16 w-16 text-magizh-teal" />,
@@ -42,7 +44,8 @@ const servicesList = [
       'Accessibility compliance for all users',
       'Interactive prototypes for early testing'
     ],
-    technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Zeplin']
+    technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Zeplin'],
+    id: 'ui-ux-design'
   },
   {
     icon: <Database className="h-16 w-16 text-magizh-pink" />,
@@ -54,7 +57,8 @@ const servicesList = [
       'Automated backup and disaster recovery',
       'Scalable solutions for growing data needs'
     ],
-    technologies: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQL Server', 'Oracle']
+    technologies: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQL Server', 'Oracle'],
+    id: 'database-design-management'
   },
   {
     icon: <Server className="h-16 w-16 text-magizh-blue" />,
@@ -66,7 +70,8 @@ const servicesList = [
       'High availability and disaster recovery',
       'Continuous monitoring and maintenance'
     ],
-    technologies: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform']
+    technologies: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform'],
+    id: 'cloud-infrastructure'
   },
   {
     icon: <Layers className="h-16 w-16 text-magizh-purple" />,
@@ -78,7 +83,8 @@ const servicesList = [
       'Custom reporting and analytics dashboards',
       'Seamless integration with existing systems'
     ],
-    technologies: ['SAP', 'Salesforce', 'Microsoft Dynamics', 'Oracle NetSuite', 'Custom Solutions']
+    technologies: ['SAP', 'Salesforce', 'Microsoft Dynamics', 'Oracle NetSuite', 'Custom Solutions'],
+    id: 'enterprise-solutions'
   }
 ];
 
@@ -220,7 +226,7 @@ const ServicesPage = () => {
                     
                     <div className="mt-6">
                       <Link
-                        to="/contact"
+                        to={`/services/${service.id}`}
                         className="inline-flex items-center font-medium text-magizh-blue hover:text-magizh-purple transition-colors group"
                       >
                         Learn more
