@@ -153,7 +153,7 @@ const IndustriesPage = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Link to="/contact">
-              <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80 text-white">
+              <Button size="lg">
                 Request a Consultation <ChevronRight size={16} />
               </Button>
             </Link>
@@ -178,7 +178,7 @@ const IndustriesPage = () => {
                       <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
                       <p className="text-gray-600 mb-4">{industry.description}</p>
                       <Link to={`/industries/${industry.id}`} className="mt-auto">
-                        <Button variant="outline" className="text-white border-magizh-blue bg-magizh-blue hover:bg-magizh-blue/80">
+                        <Button variant="outline">
                           Learn more
                         </Button>
                       </Link>
@@ -268,7 +268,7 @@ const IndustriesPage = () => {
                 
                 <div className="mt-6 text-center">
                   <Link to={`/industries/${industry.id}`}>
-                    <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white">
+                    <Button>
                       Learn More <ChevronRight size={16} className="ml-2" />
                     </Button>
                   </Link>
@@ -299,12 +299,12 @@ const IndustriesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-magizh-blue hover:bg-magizh-blue/80 text-white">
+                <Button size="lg">
                   Schedule a Consultation
                 </Button>
               </Link>
               <Link to="/services">
-                <Button size="lg" variant="outline" className="border-magizh-teal text-white bg-magizh-teal hover:bg-magizh-teal/80">
+                <Button size="lg" variant="outline">
                   View All Services
                 </Button>
               </Link>

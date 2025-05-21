@@ -97,7 +97,7 @@ const Industries = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{industry.name}</h3>
                   <p className="text-gray-600 mb-4">{industry.description}</p>
-                  <div className="mt-auto inline-flex items-center font-medium text-magizh-blue hover:text-magizh-purple transition-colors group">
+                  <div className="mt-auto inline-flex items-center font-medium text-magizh-blue hover:text-magizh-blue transition-colors group">
                     Learn more
                     <svg 
                       className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
@@ -121,7 +121,7 @@ const Industries = () => {
           </p>
           <Link 
             to="/contact" 
-            className="inline-flex items-center font-medium text-magizh-teal hover:text-magizh-blue transition-colors group"
+            className="inline-flex items-center font-medium text-magizh-blue hover:text-magizh-blue/80 transition-colors group"
           >
             Contact us to learn more
             <svg 
