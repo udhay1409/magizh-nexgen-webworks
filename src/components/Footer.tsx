@@ -52,7 +52,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 border-b border-white/10 pb-2">Services</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/web-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/web-application-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
                   <span className="text-xs">→</span> Web Development
                 </Link>
               </li>
