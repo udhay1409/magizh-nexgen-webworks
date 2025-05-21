@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -67,11 +68,11 @@ const Contact = () => {
   };
 
   // Updated to match the style of other pages
-  return <section id="contact" className="section-padding bg-white py-[10px]">
+  return <section id="contact" className="section-padding bg-white py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="w-full lg:w-1/2">
-            <div className="bg-gradient-to-br from-magizh-blue/5 to-magizh-purple/5 p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="bg-gradient-to-br from-magizh-blue/5 to-magizh-purple/5 p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-magizh-dark">Send us a message</h3>
               
               <Form {...form}>
@@ -118,7 +119,7 @@ const Contact = () => {
                         <FormMessage />
                       </FormItem>} />
                   
-                  <Button type="submit" disabled={isSubmitting} className="w-full text-white font-medium bg-magizh-blue">
+                  <Button type="submit" disabled={isSubmitting} className="w-full text-white font-medium bg-magizh-blue hover:bg-magizh-blue/80">
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>

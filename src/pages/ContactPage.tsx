@@ -31,9 +31,7 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
-        <div>
-          <Contact />
-        </div>
+        <Contact />
       </main>
       <Footer />
     </div>
