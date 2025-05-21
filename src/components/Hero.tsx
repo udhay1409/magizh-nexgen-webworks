@@ -1,8 +1,13 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import GetQuoteForm from './GetQuoteForm';
 
 const Hero = () => {
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
+  
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-magizh-light via-white to-blue-50 flex items-center pt-16 overflow-hidden">
       <div 
@@ -49,12 +54,22 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button className="bg-magizh-blue hover:bg-magizh-blue/80 text-white text-lg px-8 py-6 rounded-lg shadow-glow-blue transition-all duration-300 ease-in-out hover:translate-y-[-2px]">
+              <Button 
+                className="bg-magizh-blue hover:bg-magizh-blue/80 text-white text-lg px-8 py-6 rounded-lg shadow-glow-blue transition-all duration-300 ease-in-out hover:translate-y-[-2px]"
+                onClick={() => setShowQuoteForm(true)}
+              >
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" className="border-magizh-blue text-magizh-blue hover:bg-magizh-blue/5 text-lg px-8 py-6 rounded-lg transition-all duration-300 hover:border-magizh-purple hover:text-magizh-purple">
-                Our Services
+              
+              <Button 
+                variant="outline" 
+                className="border-magizh-blue text-magizh-blue hover:bg-magizh-blue/5 text-lg px-8 py-6 rounded-lg transition-all duration-300 hover:border-magizh-purple hover:text-magizh-purple"
+                asChild
+              >
+                <Link to="/services">
+                  Our Services
+                </Link>
               </Button>
             </div>
             
@@ -124,6 +139,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Quote Form Dialog */}
+      <GetQuoteForm open={showQuoteForm} onOpenChange={setShowQuoteForm} />
     </section>
   );
 };

@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
@@ -32,16 +33,16 @@ const Footer = () => {
               Transforming businesses with next-gen technology solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.facebook.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://twitter.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.linkedin.com/company/mntfuture/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.instagram.com/mnt_future" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

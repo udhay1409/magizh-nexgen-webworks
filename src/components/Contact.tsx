@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -208,16 +207,16 @@ const Contact = () => {
                 <div className="flex justify-between items-center mb-6">
                   <h4 className="font-semibold text-lg text-magizh-dark">Follow Us</h4>
                   <div className="flex space-x-4">
-                    <a href="#" aria-label="Facebook" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
+                    <a href="https://www.facebook.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
                       <Facebook className="h-5 w-5" />
                     </a>
-                    <a href="#" aria-label="Twitter" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
+                    <a href="https://twitter.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
                       <Twitter className="h-5 w-5" />
                     </a>
-                    <a href="#" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/company/mntfuture/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
                       <Linkedin className="h-5 w-5" />
                     </a>
-                    <a href="#" aria-label="Instagram" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
+                    <a href="https://www.instagram.com/mnt_future" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
                       <Instagram className="h-5 w-5" />
                     </a>
                   </div>

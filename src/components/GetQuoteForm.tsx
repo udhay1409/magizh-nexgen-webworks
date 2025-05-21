@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -164,7 +165,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
 
   return (
     <Dialog open={open} onOpenChange={handleClose} modal={true}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto z-50">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto z-50 bg-white">
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-10">
             <div className="rounded-full bg-green-100 p-3 mb-4">
