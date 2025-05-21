@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, CheckCircle } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -75,6 +75,23 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-magizh-blue/5 to-magizh-purple/5 p-8 rounded-2xl shadow-lg border border-gray-100 h-full">
               <h3 className="text-2xl font-semibold mb-6 text-magizh-dark">Send us a message</h3>
               
+              <div className="mb-6">
+                <p className="text-gray-600 mb-4">
+                  We're excited to hear from you! Fill out the form below and our team will respond promptly to your inquiry.
+                </p>
+                <div className="bg-magizh-light/50 p-4 rounded-lg mb-5">
+                  <h4 className="font-medium text-magizh-dark mb-3">Why contact us?</h4>
+                  <ul className="space-y-2">
+                    {["Custom project inquiries", "Technical support", "Partnership opportunities", "General questions"].map((item, index) => (
+                      <li key={index} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 mr-2 text-magizh-blue" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                   <FormField control={form.control} name="name" render={({
@@ -122,6 +139,10 @@ const Contact = () => {
                   <Button type="submit" disabled={isSubmitting} className="w-full text-white font-medium bg-magizh-blue hover:bg-magizh-blue/80">
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
+
+                  <div className="text-center text-sm text-gray-500 mt-4">
+                    <p>Your privacy is important to us. We never share your information.</p>
+                  </div>
                 </form>
               </Form>
             </div>
