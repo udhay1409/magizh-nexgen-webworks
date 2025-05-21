@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -322,12 +321,12 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
 
                 <div className="bg-blue-50 p-4 rounded-lg mt-6 flex gap-3">
                   <div className="flex-shrink-0">
-                    <Mail className="h-5 w-5 text-magizh-purple" />
+                    <Mail className="h-5 w-5 text-magizh-blue" />
                   </div>
                   <div className="text-sm">
-                    <p className="font-medium text-magizh-purple">Your request will be sent to:</p>
+                    <p className="font-medium text-magizh-blue">Your request will be sent to:</p>
                     <p className="text-gray-600 mt-1">sales@mntfuture.com</p>
-                    <p className="mt-2 font-medium text-magizh-purple">What happens next?</p>
+                    <p className="mt-2 font-medium text-magizh-blue">What happens next?</p>
                     <ol className="list-decimal ml-5 mt-1 text-gray-600 space-y-1">
                       <li>Our sales team will review your requirements</li>
                       <li>We'll contact you within 24 hours</li>
@@ -348,7 +347,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                   </Button>
                   <Button 
                     type="submit" 
-                    className="bg-magizh-purple hover:bg-magizh-purple/80 text-white"
+                    className="bg-magizh-blue hover:bg-magizh-blue/80 text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
