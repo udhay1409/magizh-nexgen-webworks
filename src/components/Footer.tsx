@@ -33,16 +33,16 @@ const Footer = () => {
               Transforming businesses with next-gen technology solutions.
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.facebook.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.facebook.com/MagizhNexGen" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://twitter.com/MagizhNexGen" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/mntfuture/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.linkedin.com/company/magizhnexgen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/mnt_future" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
+              <a href="https://www.instagram.com/magizhnexgen/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-blue transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -52,28 +52,33 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 border-b border-white/10 pb-2">Services</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/web-application-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/web-application-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors group">
                   <span className="text-xs">→</span> Web Development
+                  <span className="text-magizh-blue text-xs opacity-0 group-hover:opacity-100 transition-opacity">(Learn More)</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services/mobile-app-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/mobile-app-development" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors group">
                   <span className="text-xs">→</span> Mobile App Development
+                  <span className="text-magizh-blue text-xs opacity-0 group-hover:opacity-100 transition-opacity">(Learn More)</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services/ui-ux-design" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/ui-ux-design" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors group">
                   <span className="text-xs">→</span> UI/UX Design
+                  <span className="text-magizh-blue text-xs opacity-0 group-hover:opacity-100 transition-opacity">(Learn More)</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services/cloud-infrastructure" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/cloud-infrastructure" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors group">
                   <span className="text-xs">→</span> Cloud Infrastructure
+                  <span className="text-magizh-blue text-xs opacity-0 group-hover:opacity-100 transition-opacity">(Learn More)</span>
                 </Link>
               </li>
               <li>
-                <Link to="/services/enterprise-solutions" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                <Link to="/services/enterprise-solutions" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors group">
                   <span className="text-xs">→</span> Enterprise Solutions
+                  <span className="text-magizh-blue text-xs opacity-0 group-hover:opacity-100 transition-opacity">(Learn More)</span>
                 </Link>
               </li>
             </ul>
@@ -132,7 +137,7 @@ const Footer = () => {
             <Link to="/terms" className="text-gray-400 hover:text-magizh-blue transition-colors">Terms</Link>
             <Link to="/privacy" className="text-gray-400 hover:text-magizh-blue transition-colors">Privacy</Link>
             <Link to="/cookies" className="text-gray-400 hover:text-magizh-blue transition-colors">Cookies</Link>
-            <a href="mailto:info@mntfuture.com" className="text-gray-400 hover:text-magizh-blue transition-colors">Support</a>
+            <a href="mailto:info@magizhnexgen.com" className="text-gray-400 hover:text-magizh-blue transition-colors">Support</a>
           </div>
         </div>
       </div>
