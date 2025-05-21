@@ -25,10 +25,10 @@ const Hero = () => {
       <div className="absolute bottom-32 left-1/3 w-24 h-24 rounded-full bg-magizh-teal/30 animate-float" style={{ animationDelay: '2s' }}></div>
       <div className="absolute -bottom-20 right-1/4 w-72 h-72 rounded-full bg-magizh-pink/10 filter blur-[60px]"></div>
       
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto z-10">
         <div className="flex flex-col md:flex-row items-center md:space-x-8 lg:space-x-12">
           {/* Enhanced left column with more modern typography and improved content flow */}
-          <div className="w-full md:w-1/2 space-y-7 text-left md:pr-8 mb-14 md:mb-0 animate-fade-in">
+          <div className="w-full md:w-1/2 space-y-7 text-left md:pr-8 mb-14 md:mb-0 animate-fade-in px-4">
             {/* More visually appealing badge with improved styling */}
             <span className="inline-block py-2 px-5 rounded-full bg-magizh-blue/10 text-magizh-blue text-sm font-semibold border border-magizh-blue/20 shadow-sm">
               Next-Gen Web & Mobile Development
@@ -133,7 +133,7 @@ const Hero = () => {
           </div>
           
           {/* Enhanced right column with more visually appealing image card design */}
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end px-4">
             <div className="relative w-full max-w-md animate-rotate-in">
               <div className="absolute -top-8 -right-8 w-72 h-72 bg-magizh-blue/20 rounded-full filter blur-[50px] animate-float"></div>
               <div className="absolute -bottom-12 -left-12 w-80 h-80 bg-blue-400/20 rounded-full filter blur-[60px] animate-float" style={{ animationDelay: '2s' }}></div>
