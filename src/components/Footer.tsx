@@ -1,65 +1,45 @@
-
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, ExternalLink } from 'lucide-react';
-
 const Footer = () => {
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     const input = (e.target as HTMLFormElement).email;
-    
     if (input.value) {
       toast({
         title: "Subscription Successful!",
-        description: "Thank you for subscribing to our newsletter.",
+        description: "Thank you for subscribing to our newsletter."
       });
       input.value = '';
     }
   };
-
-  return (
-    <footer className="bg-gradient-to-br from-magizh-dark to-magizh-dark/95 text-white">
+  return <footer className="bg-gradient-to-br from-magizh-dark to-magizh-dark/95 text-white">
       <div className="container mx-auto py-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div className="space-y-6">
             <div className="text-2xl font-bold">
-              Magizh <span className="text-magizh-purple">NexGen</span>
+              Magizh <span className="text-magizh-blue">NexGen</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Custom web and mobile application development for all major industries. 
               Transforming businesses with next-gen technology solutions.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="#"
-                aria-label="Facebook"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
-              >
+              <a href="#" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a 
-                href="#"
-                aria-label="Twitter"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
-              >
+              <a href="#" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a 
-                href="#"
-                aria-label="LinkedIn"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
-              >
+              <a href="#" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a 
-                href="#"
-                aria-label="Instagram"
-                className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors"
-              >
+              <a href="#" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-magizh-purple/80 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -133,17 +113,8 @@ const Footer = () => {
               Stay updated with our latest news and offers by subscribing to our newsletter.
             </p>
             <form onSubmit={handleSubscribe} className="flex flex-col space-y-3">
-              <Input 
-                name="email"
-                type="email" 
-                placeholder="Your email address" 
-                className="bg-white/10 border-white/10 text-white placeholder:text-gray-400"
-                required
-              />
-              <Button 
-                type="submit"
-                className="bg-magizh-purple hover:bg-magizh-purple/80 text-white w-full"
-              >
+              <Input name="email" type="email" placeholder="Your email address" className="bg-white/10 border-white/10 text-white placeholder:text-gray-400" required />
+              <Button type="submit" className="text-white w-full bg-magizh-blue">
                 Subscribe
               </Button>
             </form>
@@ -162,8 +133,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
