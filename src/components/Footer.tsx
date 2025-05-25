@@ -116,6 +116,11 @@ const Footer = () => {
                   <span className="text-xs">→</span> Cancel & Refund
                 </Link>
               </li>
+              <li>
+                <Link to="/shipping-delivery" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                  <span className="text-xs">→</span> Shipping & Delivery
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -142,6 +147,7 @@ const Footer = () => {
             <Link to="/privacy" className="text-gray-400 hover:text-magizh-blue transition-colors">Privacy</Link>
             <Link to="/cookies" className="text-gray-400 hover:text-magizh-blue transition-colors">Cookies</Link>
             <Link to="/cancel-refund" className="text-gray-400 hover:text-magizh-blue transition-colors">Cancel & Refund</Link>
+            <Link to="/shipping-delivery" className="text-gray-400 hover:text-magizh-blue transition-colors">Shipping & Delivery</Link>
             <a href="mailto:info@magizhnexgen.com" className="text-gray-400 hover:text-magizh-blue transition-colors">Support</a>
           </div>
         </div>
