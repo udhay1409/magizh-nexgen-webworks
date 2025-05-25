@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -146,11 +145,13 @@ const CancelRefundPage = () => {
               <p className="text-gray-700">
                 For questions regarding cancellations, refunds, or this policy, please contact our billing department at:
                 <br />
-                <strong>Email:</strong> <a href="mailto:billing@magizhnexgen.com" className="text-magizh-blue hover:underline">billing@magizhnexgen.com</a>
+                <strong>Email:</strong> <a href="mailto:info@mntfuture.com" className="text-magizh-blue hover:underline">info@mntfuture.com</a>
                 <br />
-                <strong>Phone:</strong> +1 (555) 123-4567
+                <strong>Support:</strong> <a href="mailto:support@mntfuture.com" className="text-magizh-blue hover:underline">support@mntfuture.com</a>
                 <br />
-                <strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM (EST)
+                <strong>Phone:</strong> <a href="tel:+918925845077" className="text-magizh-blue hover:underline">+91 8925845077</a> | <a href="tel:+917402075266" className="text-magizh-blue hover:underline">+91 7402075266</a>
+                <br />
+                <strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM (IST)
               </p>
             </section>
             
