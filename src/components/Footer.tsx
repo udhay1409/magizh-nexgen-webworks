@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
@@ -112,6 +111,11 @@ const Footer = () => {
                   <span className="text-xs">→</span> Terms & Conditions
                 </Link>
               </li>
+              <li>
+                <Link to="/cancel-refund" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                  <span className="text-xs">→</span> Cancel & Refund
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -137,6 +141,7 @@ const Footer = () => {
             <Link to="/terms" className="text-gray-400 hover:text-magizh-blue transition-colors">Terms</Link>
             <Link to="/privacy" className="text-gray-400 hover:text-magizh-blue transition-colors">Privacy</Link>
             <Link to="/cookies" className="text-gray-400 hover:text-magizh-blue transition-colors">Cookies</Link>
+            <Link to="/cancel-refund" className="text-gray-400 hover:text-magizh-blue transition-colors">Cancel & Refund</Link>
             <a href="mailto:info@magizhnexgen.com" className="text-gray-400 hover:text-magizh-blue transition-colors">Support</a>
           </div>
         </div>
