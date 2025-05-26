@@ -66,6 +66,12 @@ const Navbar = () => {
               Services
             </Link>
             <Link 
+              to="/packages" 
+              className={`transition-colors ${isActive('/packages') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
+            >
+              Packages
+            </Link>
+            <Link 
               to="/industries" 
               className={`transition-colors ${isActive('/industries') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
             >
@@ -117,6 +123,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Services
+              </Link>
+              <Link 
+                to="/packages" 
+                className={`transition-colors py-2 ${isActive('/packages') ? 'text-magizh-blue font-medium' : 'text-gray-700 hover:text-magizh-blue'}`}
+                onClick={() => setIsOpen(false)}
+              >
+                Packages
               </Link>
               <Link 
                 to="/industries" 

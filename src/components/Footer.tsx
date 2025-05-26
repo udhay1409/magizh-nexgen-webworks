@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
@@ -94,6 +95,11 @@ const Footer = () => {
               <li>
                 <Link to="/services" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
                   <span className="text-xs">→</span> Our Work
+                </Link>
+              </li>
+              <li>
+                <Link to="/packages" className="text-gray-400 flex items-center gap-2 hover:text-magizh-blue transition-colors">
+                  <span className="text-xs">→</span> Packages
                 </Link>
               </li>
               <li>
