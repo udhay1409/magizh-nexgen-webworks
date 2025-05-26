@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -149,7 +150,7 @@ const CancelRefundPage = () => {
                 <br />
                 <strong>Support:</strong> <a href="mailto:support@mntfuture.com" className="text-magizh-blue hover:underline">support@mntfuture.com</a>
                 <br />
-                <strong>Phone:</strong> <a href="tel:+918925845077" className="text-magizh-blue hover:underline">+91 8925845077</a> | <a href="tel:+917402075266" className="text-magizh-blue hover:underline">+91 7402075266</a>
+                <strong>Phone:</strong> <a href="tel:+918925845077" className="text-magizh-blue hover:underline">+91 8925845077</a> | <a href="tel:+918220947113" className="text-magizh-blue hover:underline">+91 8220947113</a>
                 <br />
                 <strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM (IST)
               </p>
