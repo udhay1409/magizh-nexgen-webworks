@@ -20,64 +20,15 @@
   [data-state='open'] .collapsible-closed {
     @apply hidden;
   }
-  
-  /* Tech-inspired animations */
-  .tech-glow {
-    @apply shadow-[0_0_20px_rgba(59,130,246,0.5),0_0_40px_rgba(59,130,246,0.3),0_0_60px_rgba(59,130,246,0.1)];
-  }
-  
-  .tech-glow-purple {
-    @apply shadow-[0_0_20px_rgba(147,51,234,0.5),0_0_40px_rgba(147,51,234,0.3),0_0_60px_rgba(147,51,234,0.1)];
-  }
-  
-  .tech-border {
-    @apply border border-blue-500/30 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5;
-  }
-  
-  .neural-network {
-    background-image: 
-      radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
-  }
-  
-  .circuit-lines {
-    background-image: 
-      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-  
-  .holographic {
-    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
-    background-size: 400% 400%;
-    animation: holographic 4s ease-in-out infinite;
-  }
-  
-  @keyframes holographic {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  
-  .data-stream {
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.8), transparent);
-    animation: data-stream 2s linear infinite;
-  }
-  
-  @keyframes data-stream {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(200%); }
-  }
 }
 
 :root {
-  --magizh-blue: #3b82f6;
-  --magizh-purple: #8b5cf6;
-  --magizh-teal: #06b6d4;
-  --magizh-pink: #ec4899;
-  --magizh-dark: #0f172a;
-  --magizh-light: #f8fafc;
-  --tech-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+  --magizh-blue: #2563eb;
+  --magizh-purple: #7c3aed;
+  --magizh-teal: #4936B2; /* Purple shade to match UI */
+  --magizh-pink: #db2777;
+  --magizh-dark: #1e293b;
+  --magizh-light: #f1f5f9;
 }
 
 .text-magizh-blue { color: var(--magizh-blue); }
@@ -97,59 +48,31 @@
 .border-magizh-purple { border-color: var(--magizh-purple); }
 .border-magizh-teal { border-color: var(--magizh-teal); }
 
-/* Enhanced gradient utilities */
-.bg-gradient-tech {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+/* Add new utility classes for gradients */
+.bg-gradient-blue-purple {
+  background: linear-gradient(135deg, var(--magizh-blue), var(--magizh-purple));
 }
 
-.bg-gradient-ai {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+.bg-gradient-dark {
+  background: linear-gradient(135deg, var(--magizh-dark), #0f172a);
 }
 
-.bg-gradient-neural {
-  background: radial-gradient(ellipse at center, #1e293b 0%, #0f172a 70%);
-}
-
-/* Glass morphism effects */
+/* Glass effect utilities */
 .glass-effect {
-  @apply backdrop-blur-xl bg-white/10 border border-white/20;
-}
-
-.glass-dark {
-  @apply backdrop-blur-xl bg-gray-900/30 border border-white/10;
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
 }
 
 /* Input field focus styles */
 .focus-teal {
-  @apply focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-300;
+  @apply focus:ring-2 focus:ring-magizh-purple/50 focus:border-magizh-purple;
 }
 
-/* Enhanced z-index fixes */
+/* Fix for Dialog z-index */
 .fixed.inset-0 {
   z-index: 50;
 }
 
+/* Ensure dropdown menus are visible */
 [data-radix-popper-content-wrapper] {
   z-index: 60 !important; 
-}
-
-/* Cyberpunk text effects */
-.cyber-text {
-  text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
-}
-
-/* Robot/AI loading animations */
-.ai-pulse {
-  animation: ai-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes ai-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
 }
