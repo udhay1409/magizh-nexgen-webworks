@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Star, Zap, Crown, Bot, Cpu, Circuit } from 'lucide-react';
+import { Check, Star, Zap, Crown, Bot, Cpu } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 declare global {
