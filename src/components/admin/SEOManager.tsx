@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -7,9 +6,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Search, TrendingUp, AlertCircle, CheckCircle, Eye, BarChart, FileText } from 'lucide-react';
+import { Search, TrendingUp, AlertCircle, CheckCircle, Eye, BarChart, FileText, Globe } from 'lucide-react';
 import KeywordVolumeChecker from './KeywordVolumeChecker';
 import KeywordDensityChecker from './KeywordDensityChecker';
+import TechnicalSEOChecker from './TechnicalSEOChecker';
 
 const SEOManager = () => {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -89,7 +89,7 @@ const SEOManager = () => {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="pages" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-5">
+        <TabsList className="grid w-full grid-cols-6">
           <TabsTrigger value="pages" className="flex items-center gap-2">
             <Search className="h-4 w-4" />
             Page SEO
@@ -101,6 +101,10 @@ const SEOManager = () => {
           <TabsTrigger value="density" className="flex items-center gap-2">
             <FileText className="h-4 w-4" />
             Density
+          </TabsTrigger>
+          <TabsTrigger value="technical" className="flex items-center gap-2">
+            <Globe className="h-4 w-4" />
+            Technical
           </TabsTrigger>
           <TabsTrigger value="analytics" className="flex items-center gap-2">
             <TrendingUp className="h-4 w-4" />
@@ -201,6 +205,10 @@ const SEOManager = () => {
 
         <TabsContent value="density" className="space-y-6">
           <KeywordDensityChecker />
+        </TabsContent>
+
+        <TabsContent value="technical" className="space-y-6">
+          <TechnicalSEOChecker />
         </TabsContent>
 
         <TabsContent value="analytics" className="space-y-6">
