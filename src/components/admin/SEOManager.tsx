@@ -6,10 +6,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Search, TrendingUp, AlertCircle, CheckCircle, Eye, BarChart, FileText, Globe } from 'lucide-react';
+import { Search, TrendingUp, AlertCircle, CheckCircle, Eye, BarChart, FileText, Globe, MapPin } from 'lucide-react';
 import KeywordVolumeChecker from './KeywordVolumeChecker';
 import KeywordDensityChecker from './KeywordDensityChecker';
 import TechnicalSEOChecker from './TechnicalSEOChecker';
+import LocalSEOManager from './LocalSEOManager';
 
 const SEOManager = () => {
   const [selectedPage, setSelectedPage] = useState('home');
@@ -89,7 +90,7 @@ const SEOManager = () => {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="pages" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-6">
+        <TabsList className="grid w-full grid-cols-7">
           <TabsTrigger value="pages" className="flex items-center gap-2">
             <Search className="h-4 w-4" />
             Page SEO
@@ -105,6 +106,10 @@ const SEOManager = () => {
           <TabsTrigger value="technical" className="flex items-center gap-2">
             <Globe className="h-4 w-4" />
             Technical
+          </TabsTrigger>
+          <TabsTrigger value="local" className="flex items-center gap-2">
+            <MapPin className="h-4 w-4" />
+            Local SEO
           </TabsTrigger>
           <TabsTrigger value="analytics" className="flex items-center gap-2">
             <TrendingUp className="h-4 w-4" />
@@ -209,6 +214,10 @@ const SEOManager = () => {
 
         <TabsContent value="technical" className="space-y-6">
           <TechnicalSEOChecker />
+        </TabsContent>
+
+        <TabsContent value="local" className="space-y-6">
+          <LocalSEOManager />
         </TabsContent>
 
         <TabsContent value="analytics" className="space-y-6">
