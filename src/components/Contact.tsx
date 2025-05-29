@@ -92,58 +92,85 @@ const Contact = () => {
               </div>
               
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-                  <FormField control={form.control} name="name" render={({
-                  field
-                }) => <FormItem>
-                        <FormLabel className="text-magizh-dark">Your Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="John Doe" className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>} />
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <FormField control={form.control} name="email" render={({
-                    field
-                  }) => <FormItem>
-                          <FormLabel className="text-magizh-dark">Email Address</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="john@example.com" className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>} />
-                    
-                    <FormField control={form.control} name="phone" render={({
-                    field
-                  }) => <FormItem>
-                          <FormLabel className="text-magizh-dark">Phone Number</FormLabel>
-                          <FormControl>
-                            <Input type="tel" placeholder="+1 (555) 000-0000" className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>} />
-                  </div>
-                  
-                  <FormField control={form.control} name="message" render={({
-                  field
-                }) => <FormItem>
-                        <FormLabel className="text-magizh-dark">Your Message</FormLabel>
-                        <FormControl>
-                          <Textarea placeholder="Tell us about your project..." rows={4} className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20 resize-none" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>} />
-                  
-                  <Button type="submit" disabled={isSubmitting} className="w-full text-white font-medium bg-magizh-blue hover:bg-magizh-blue/80">
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
+                <form onSubmit={async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    if (response.ok) {
+      toast({
+        title: 'Message Sent!',
+        description: "We'll get back to you as soon as possible."
+      });
+      form.reset();
+    } else {
+      toast({
+        title: 'Something went wrong!',
+        description: 'Please try again later.',
+        variant: 'destructive'
+      });
+    }
+  }} className="space-y-5">
+    <input type="hidden" name="access_key" value="558c46b3-9154-49bc-8215-420a1f9729c9" />
+    <input type="hidden" name="from_name" value="Magizh NexGen Technologies" />
+    <input type="hidden" name="from_email" value="sales@mntfuture.com" />
 
-                  <div className="text-center text-sm text-gray-500 mt-4">
-                    <p>Your privacy is important to us. We never share your information.</p>
-                  </div>
-                </form>
-              </Form>
+    <FormField control={form.control} name="name" render={({ field }) => (
+      <FormItem>
+        <FormLabel className="text-magizh-dark">Your Name</FormLabel>
+        <FormControl>
+          <Input className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} name="name" required />
+        </FormControl>
+        <FormMessage />
+      </FormItem>
+    )} />
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <FormField control={form.control} name="email" render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-magizh-dark">Email Address</FormLabel>
+          <FormControl>
+            <Input type="email" className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} name="email" required />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )} />
+
+      <FormField control={form.control} name="phone" render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-magizh-dark">Phone Number</FormLabel>
+          <FormControl>
+            <Input type="tel" className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20" {...field} name="phone" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )} />
+    </div>
+
+    <FormField control={form.control} name="message" render={({ field }) => (
+      <FormItem>
+        <FormLabel className="text-magizh-dark">Your Message</FormLabel>
+        <FormControl>
+          <Textarea rows={4} className="border-gray-200 focus:border-magizh-blue focus:ring-magizh-blue/20 resize-none" {...field} name="message" required />
+        </FormControl>
+        <FormMessage />
+      </FormItem>
+    )} />
+
+    {/* Honeypot Spam Protection */}
+    <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+    <Button type="submit" className="w-full text-white font-medium bg-magizh-blue hover:bg-magizh-blue/80">
+      Send Message
+    </Button>
+
+    <div className="text-center text-sm text-gray-500 mt-4">
+      <p>Your privacy is important to us. We never share your information.</p>
+    </div>
+  </form>
+</Form>
             </div>
           </div>
           
@@ -204,19 +231,43 @@ const Contact = () => {
               </div>
               
               <div className="bg-gradient-to-br from-magizh-blue/5 to-magizh-purple/5 p-8 rounded-2xl shadow-lg border border-gray-100">
-                <div className="flex justify-between items-center mb-6">
-                  <h4 className="font-semibold text-lg text-magizh-dark">Follow Us</h4>
-                  <div className="flex space-x-4">
-                    <a href="https://www.facebook.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4 sm:gap-0">
+                  <h4 className="font-semibold text-lg text-magizh-dark text-center sm:text-left">Follow Us</h4>
+                  <div className="flex justify-center sm:justify-end flex-wrap gap-3 sm:gap-4">
+                    <a
+                      href="https://www.facebook.com/mntfuture"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Facebook"
+                      className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors"
+                    >
                       <Facebook className="h-5 w-5" />
                     </a>
-                    <a href="https://twitter.com/mntfuture" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
+                    {/* <a
+                      href="https://twitter.com/mntfuture"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Twitter"
+                      className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors"
+                    >
                       <Twitter className="h-5 w-5" />
-                    </a>
-                    <a href="https://www.linkedin.com/company/mntfuture/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors">
+                    </a> */}
+                    <a
+                      href="https://www.linkedin.com/company/mntfuture/?viewAsMember=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="h-10 w-10 rounded-full bg-magizh-blue/10 flex items-center justify-center hover:bg-magizh-blue text-magizh-blue hover:text-white transition-colors"
+                    >
                       <Linkedin className="h-5 w-5" />
                     </a>
-                    <a href="https://www.instagram.com/mnt_future" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors">
+                    <a
+                      href="https://www.instagram.com/mnt_future"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="h-10 w-10 rounded-full bg-magizh-purple/10 flex items-center justify-center hover:bg-magizh-purple text-magizh-purple hover:text-white transition-colors"
+                    >
                       <Instagram className="h-5 w-5" />
                     </a>
                   </div>
