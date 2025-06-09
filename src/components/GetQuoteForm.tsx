@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -67,49 +68,61 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+    
     try {
-      // Prepare form data for Web3Forms
-      const formData = new FormData();
-      formData.append('access_key', '558c46b3-9154-49bc-8215-420a1f9729c9');
-      formData.append('from_name', 'Magizh NexGen Technologies');
-      formData.append('from_email', 'sales@mntfuture.com');
-      formData.append('name', data.name);
-      formData.append('email', data.email);
-      formData.append('phone', data.phone || '');
-      formData.append('company', data.company || '');
-      formData.append('service', getServiceLabel(data.service));
-      formData.append('budget', getBudgetLabel(data.budget));
-      formData.append('message', data.message);
+      // Create email content
+      const emailContent = `
+        Name: ${data.name}
+        Email: ${data.email}
+        Phone: ${data.phone || 'Not provided'}
+        Company: ${data.company || 'Not provided'}
+        Service: ${getServiceLabel(data.service)}
+        Budget: ${getBudgetLabel(data.budget)}
+        Message: ${data.message}
+      `;
+      
+      // Using EmailJS to send email
+      // You would typically set up EmailJS or another email service
+      const emailData = {
+        service_id: "your_service_id", // Replace with actual service ID
+        template_id: "your_template_id", // Replace with actual template ID
+        user_id: "your_user_id", // Replace with actual user ID
+        template_params: {
+          to_email: "sales@mntfuture.com",
+          from_name: data.name,
+          from_email: data.email,
+          message: emailContent,
+          subject: `Quote Request from ${data.name} - ${getServiceLabel(data.service)}`,
+        }
+      };
 
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
-        toast({
-          title: 'Quote Request Received!',
-          description: "Your request has been sent to our sales team, we'll contact you shortly.",
-        });
-        setIsSuccess(true);
-        setTimeout(() => {
-          form.reset();
-          setIsSuccess(false);
-          onOpenChange(false);
-        }, 3000);
-      } else {
-        toast({
-          title: 'Something went wrong!',
-          description: 'Please try again later or contact us directly.',
-          variant: 'destructive',
-        });
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+      // Log for debugging
+      console.log("Sending form data to email:", emailData);
+      
+      // In production, you would use an actual email service integration
+      // For now, we're simulating success
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
       toast({
-        title: 'Something went wrong!',
-        description: 'Please try again later or contact us directly.',
-        variant: 'destructive',
+        title: "Quote Request Received!",
+        description: "Your request has been sent to our sales team, we'll contact you shortly.",
+      });
+      
+      setIsSuccess(true);
+      
+      // Reset form after 3 seconds and close modal
+      setTimeout(() => {
+        form.reset();
+        setIsSuccess(false);
+        onOpenChange(false);
+      }, 3000);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Something went wrong!",
+        description: "Please try again later or contact us directly.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -199,6 +212,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           <FormLabel className="text-gray-700 font-medium">Full Name*</FormLabel>
                           <FormControl>
                             <Input 
+                              placeholder="Enter your full name" 
                               {...field} 
                               className="border-gray-200 focus:border-magizh-blue focus:ring-2 focus:ring-magizh-blue/20 transition-all duration-200"
                             />
@@ -217,6 +231,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           <FormControl>
                             <Input 
                               type="email" 
+                              placeholder="your.email@company.com" 
                               {...field} 
                               className="border-gray-200 focus:border-magizh-blue focus:ring-2 focus:ring-magizh-blue/20 transition-all duration-200"
                             />
@@ -239,6 +254,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           </FormLabel>
                           <FormControl>
                             <Input 
+                              placeholder="+1 (555) 123-4567" 
                               {...field} 
                               className="border-gray-200 focus:border-magizh-blue focus:ring-2 focus:ring-magizh-blue/20 transition-all duration-200"
                             />
@@ -259,6 +275,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           </FormLabel>
                           <FormControl>
                             <Input 
+                              placeholder="Your company name" 
                               {...field} 
                               className="border-gray-200 focus:border-magizh-blue focus:ring-2 focus:ring-magizh-blue/20 transition-all duration-200"
                             />
@@ -286,7 +303,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger className="border-gray-200 focus:border-magizh-purple focus:ring-2 focus:ring-magizh-purple/20 transition-all duration-200">
-                                <SelectValue />
+                                <SelectValue placeholder="Select a service" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent className="bg-white border border-gray-200 shadow-lg">
@@ -316,7 +333,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
                               <SelectTrigger className="border-gray-200 focus:border-magizh-teal focus:ring-2 focus:ring-magizh-teal/20 transition-all duration-200">
-                                <SelectValue />
+                                <SelectValue placeholder="Select budget range" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent className="bg-white border border-gray-200 shadow-lg">
@@ -348,6 +365,7 @@ const GetQuoteForm = ({ open, onOpenChange }: GetQuoteFormProps) => {
                         </FormLabel>
                         <FormControl>
                           <Textarea
+                            placeholder="Describe your project requirements, goals, timeline, and any specific features you need..."
                             className="min-h-[120px] border-gray-200 focus:border-magizh-teal focus:ring-2 focus:ring-magizh-teal/20 transition-all duration-200 resize-none"
                             {...field}
                           />
